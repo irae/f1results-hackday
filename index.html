@@ -143,7 +143,12 @@
 				var years = $("#menuYears ul li");
 				var willCloseYear = false;
 				years.click(function(){
-					location.href = location.href.replace(/season=[0-9]{4}/,"season=" + $(this).html());							
+					var loc = document.location.href;
+					if (1+document.location.href.indexOf("season")){
+						location.href = loc.replace(/season=[0-9]{4}/,"season=" + $(this).html());													
+					} else {
+						location.href =  loc + (location.search?'&':'?') + "season=" + $(this).html();
+					}
 				});
 				$(".menuItem.year,#menuYears").mouseenter(function(){
 					willCloseYear = false;
