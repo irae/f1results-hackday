@@ -25,6 +25,9 @@ function racesJsonPrettify(data) {
 			name: oRace.raceName,
 			results: []
 		};
+		if(!oRace.Results) {
+			return false;
+		}
 		for(var j=0;j<oRace.Results.length;j++) {
 			var res = oRace.Results[j];
 			var resOut = {
@@ -94,13 +97,21 @@ function printDriverInfos(data) {
 	
 	console.dir(players);
 	
+	// sort players
 	players = players.sort(function(a,b){
 		return b.sumPoints - a.sumPoints;
 	});
 	
+	// reset counter
 	$.each(players,function(i,player){
 		player.playerCount = i+1;
 	});
+	
+	var limit = parseInt(_GET('limit'),10);
+	if( limit > 2) {
+		players = players.slice(0,limit);
+		playerCount = limit;
+	}
 	
 	var html = '<canvas id="curves" width="600" height="'+(playerCount*70)+'"></canvas>';
 	
