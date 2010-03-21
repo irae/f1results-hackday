@@ -44,30 +44,55 @@ function racesJsonPrettify(data) {
 
 var pixelPerPoints = 4;
 
-var players = {};
+var players = [];
 var playerCount = 0;
 
+function playerExists(searchId) {
+	var exists = false;
+	$.each(players, function(i,player){
+		if(player.driverId == searchId) {
+			exists = player;
+		}
+	});
+	return exists;
+};
+
 function printDriverInfos(data) {
-	console.debug(data.races);
+	// console.debug(data.races);
 	
 	$.each(data.races,function(i,race){
 		
 		$.each(race.results,function(j,result){
-			var driver = players[result.driverId] || (players[result.driverId] = {
-				driver: result.driver,
-				playerCount: ++playerCount,
-				driverId: result.driverId,
-				sumPoints: 0,
-				racesRun:[]
-			});
+			var found = playerExists(result.driverId);
+			if(!found) {
+				var driver = {
+					driver: result.driver,
+					playerCount: ++playerCount,
+					driverId: result.driverId,
+					sumPoints: 0,
+					racesRun:[]
+				};
+				players.push(driver);
+			} else {
+				var driver = found;
+			}
 			driver.racesRun.push(i+1);
 			driver.sumPoints += result.points;
 		});
 	});
 	
-	console.dir(players);
+	// console.dir(players);
 	
-	var html = '';
+	players = players.sort(function(a,b){
+		return b.sumPoints - a.sumPoints;
+	});
+	
+	$.each(players,function(i,player){
+		player.playerCount = i+1;
+	});
+	
+	var html = '<canvas id="curves" width="600" height="'+(playerCount*70)+'"></canvas>';
+	
 	var posSufixes = ['st','nd','rd','th','th','th','th','th','th','th'];
 	
 	$.each(players,function(i,player){
@@ -100,7 +125,7 @@ function printDriverInfos(data) {
 			
 			// console.info(thisRacePos,player.driver);
 			
-			html += '\n\n<meter class="race race'+j+' '+race.name.toLowerCase().replace(/[\t ]/,'_')+'" value="'+thisRacePoints+'" min="0" max="10" style="width: '+(thisRacePoints*pixelPerPoints)+'px; left: '+(pointsStack*pixelPerPoints)+'px;">'+
+			html += '\n\n<meter class="race race'+j+'" value="'+thisRacePoints+'" min="0" max="10" style="width: '+(thisRacePoints*pixelPerPoints)+'px; left: '+(pointsStack*pixelPerPoints)+'px;">'+
 						'<strong class="place">'+
 							thisRacePos+'<span>'+(  posSufixes[ (thisRacePos % 10) -1 ] )+'</span>'+
 						'</strong>'+
@@ -166,7 +191,8 @@ $.ajax({
 	url:'http://query.yahooapis.com/v1/public/yql',
 	data:{
 		format:'json',
-		q:yqlquery
+		q:yqlquery,
+		'_maxAge': 60*60
 	},
 	error: function() {
 		alert('Something wrong retrieving from YQL.')

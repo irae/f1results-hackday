@@ -1,4 +1,4 @@
-var placePoints = [10,8,6,5,4,3,2,1,0]
+var placePoints = [10,8,6,5,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 
 
@@ -12,7 +12,7 @@ var stageInit = function(){
 
     var raceCount = $('#player_1 meter.race').length;
     var playerCount = $('#graph .player').length;
-    var roundMax = raceCount * 10;
+    var roundMax = raceCount * 8.8;
     var pixelAdjust = 600 / roundMax;
     
     var meterSpeed = 1500;
