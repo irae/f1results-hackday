@@ -59,7 +59,6 @@ function playerExists(searchId) {
 
 function printDriverInfos(data) {
 	// console.debug(data.races);
-	
 	$.each(data.races,function(i,race){
 		
 		$.each(race.results,function(j,result){
@@ -151,6 +150,13 @@ function printDriverInfos(data) {
 };
 
 function printRaceTables(data) {
+	// console.info(data.races.length,'totalRaces');
+	var slider = '<div class="slider" style="width: '+(data.races.length*341+20)+'px">'+
+			'<canvas id="round_races_curves" width="'+(data.races.length*341-34)+'px" height="520"></canvas>'+
+		'</div>';
+
+	$('#round_races').html(slider)
+
 	printDriverInfos(data);
 	var races = data.races;
 	var driversSums = {};

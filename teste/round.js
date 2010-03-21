@@ -7,7 +7,7 @@ var stageInit = function(){
 
 	// console log wrapper.
 	function debug(){
-	    window.console && console.log.call(console,arguments);
+	    // window.console && console.log.call(console,arguments);
 	}
 
     var raceCount = $('#player_1 meter.race').length;
@@ -41,9 +41,13 @@ var stageInit = function(){
             var place = $('#output tr:eq('+(i+1)+') td:eq('+(j+2)+')').text();
             points = parseInt(points);
             place = parseInt(place);
+			if(place.toString().toLowerCase() == 'nan') {
+				place = $('#output tr:eq('+(i+1)+') td:eq('+(j+2)+')').parents('.player').prevAll('.player').size();
+			}
             playerPoints[i][j] = points;
             playerPlaces[i][j] = place;
 			// debug(points);
+			console.info(i,'i',j,'j',place,'place',points,'points',typeof place,'typeof place');
         }
         // debug(playerPlaces[i]);
     }
@@ -125,7 +129,8 @@ var stageInit = function(){
 
             }
 
-        }
+        }		
+		
 
 		var racesCanvas = document.getElementById("round_races_curves");
 		if (racesCanvas.getContext) {
@@ -223,7 +228,7 @@ var stageInit = function(){
 
 
 
-    // drawCanvas();
+    drawCanvas();
 
 
     // graph animation functions
