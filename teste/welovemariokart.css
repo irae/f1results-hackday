@@ -422,7 +422,7 @@ button[disabled]:active
 }
 
 #round_races .race {
-    width: 240px;
+    width: 320px;
     float: left;
     border: 1px solid #CCC;
     margin: 20px 0 20px 20px;

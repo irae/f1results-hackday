@@ -2,1244 +2,583 @@
 <html>
 <head>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-
 	<link rel="stylesheet" href="yui_reset.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="welovemariokart.css" type="text/css" media="screen" />
-
-	<script type="text/javascript" src="jquery-1.3.2.min.js" charset="utf-8"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="round.js" charset="utf-8"></script>
-
-	<title>Round &rsaquo; Friday, 11 Dec 2009</title>
-
-
-</head>
-<body class="round">
-	<div id="wrap"> 
-
-		<h1>Round &rsaquo; Friday, 11 Dec 2009</h1>
-
-		<section id="graph">
-			<div class="graph_lines">
-
-				<label class="zero">0</label>
-				<div><label>25</label></div>
-				<div><label>50</label></div>
-				<div><label>75</label></div>
-				<div><label>100</label></div>
-				<div><label>125</label></div>
-
-				<div><label>150</label></div>
-			</div>
-
-			<canvas id="curves" width="600" height="260"></canvas>
-
-			<div id="player_1" class="player bowser">
-				<p class="total">98</p>
-				<progress class="round" value="98" max="150" style="width: 394px;">
-					<meter class="race race1 dry_dry_ruins" value="12" min="0" max="15" style="width: 48px; left: 0px;">
-						<strong class="place">
-
-							2<span>nd</span>
-						</strong>
-						<span class="points">12 points</span>
-					</meter>
-					<meter class="race race2 gba_bowser_castle_3" value="7" min="0" max="15" style="width: 28px; left: 48px;">
-						<strong class="place">
-							5<span>th</span>
-
-						</strong>
-						<span class="points">7 points</span>
-					</meter>
-					<meter class="race race3 ds_desert_hills" value="15" min="0" max="15" style="width: 60px; left: 76px;">
-						<strong class="place">
-							1<span>st</span>
-						</strong>
-
-						<span class="points">15 points</span>
-					</meter>
-					<meter class="race race4 n64_mario_raceway" value="3" min="0" max="15" style="width: 12px; left: 136px;">
-						<strong class="place">
-							9<span>th</span>
-						</strong>
-						<span class="points">3 points</span>
-
-					</meter>
-					<meter class="race race5 ds_delfino_square" value="15" min="0" max="15" style="width: 60px; left: 148px;">
-						<strong class="place">
-							1<span>st</span>
-						</strong>
-						<span class="points">15 points</span>
-					</meter>
-
-					<meter class="race race6 n64_bowsers_castle" value="6" min="0" max="15" style="width: 24px; left: 208px;">
-						<strong class="place">
-							6<span>th</span>
-						</strong>
-						<span class="points">6 points</span>
-					</meter>
-					<meter class="race race7 toads_factory" value="5" min="0" max="15" style="width: 20px; left: 232px;">
-
-						<strong class="place">
-							7<span>th</span>
-						</strong>
-						<span class="points">5 points</span>
-					</meter>
-					<meter class="race race8 bowsers_castle" value="15" min="0" max="15" style="width: 60px; left: 252px;">
-						<strong class="place">
-
-							1<span>st</span>
-						</strong>
-						<span class="points">15 points</span>
-					</meter>
-					<meter class="race race9 moo_moo_meadows" value="5" min="0" max="15" style="width: 20px; left: 312px;">
-						<strong class="place">
-							7<span>th</span>
-
-						</strong>
-						<span class="points">5 points</span>
-					</meter>
-					<meter class="race race10 mario_circuit" value="15" min="0" max="15" style="width: 60px; left: 332px;">
-						<strong class="place">
-							1<span>st</span>
-						</strong>
-
-						<span class="points">15 points</span>
-					</meter>
-				</progress>
-				<dl class="identity">
-					<dt class="name">Alex</dt>
-					<dd class="avatar character bowser">
-						<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-					</dd>
-
-				</dl>
-
-			</div>
-			<div id="player_2" class="player king_boo">
-				<p class="total">95</p>
-				<progress class="round" value="95" max="150" style="width: 382px;">
-					<meter class="race race1 dry_dry_ruins" value="15" min="0" max="15" style="width: 60px; left: 0px;">
-						<strong class="place">
-							1<span>st</span>
-
-						</strong>
-						<span class="points">15 points</span>
-					</meter>
-					<meter class="race race2 gba_bowser_castle_3" value="6" min="0" max="15" style="width: 24px; left: 60px;">
-						<strong class="place">
-							6<span>th</span>
-						</strong>
-
-						<span class="points">6 points</span>
-					</meter>
-					<meter class="race race3 ds_desert_hills" value="10" min="0" max="15" style="width: 40px; left: 84px;">
-						<strong class="place">
-							3<span>rd</span>
-						</strong>
-						<span class="points">10 points</span>
-
-					</meter>
-					<meter class="race race4 n64_mario_raceway" value="15" min="0" max="15" style="width: 60px; left: 124px;">
-						<strong class="place">
-							1<span>st</span>
-						</strong>
-						<span class="points">15 points</span>
-					</meter>
-
-					<meter class="race race5 ds_delfino_square" value="10" min="0" max="15" style="width: 40px; left: 184px;">
-						<strong class="place">
-							3<span>rd</span>
-						</strong>
-						<span class="points">10 points</span>
-					</meter>
-					<meter class="race race6 n64_bowsers_castle" value="8" min="0" max="15" style="width: 32px; left: 224px;">
-
-						<strong class="place">
-							4<span>th</span>
-						</strong>
-						<span class="points">8 points</span>
-					</meter>
-					<meter class="race race7 toads_factory" value="2" min="0" max="15" style="width: 8px; left: 256px;">
-						<strong class="place">
-
-							10<span>th</span>
-						</strong>
-						<span class="points">2 points</span>
-					</meter>
-					<meter class="race race8 bowsers_castle" value="10" min="0" max="15" style="width: 40px; left: 264px;">
-						<strong class="place">
-							3<span>rd</span>
-
-						</strong>
-						<span class="points">10 points</span>
-					</meter>
-					<meter class="race race9 moo_moo_meadows" value="12" min="0" max="15" style="width: 48px; left: 304px;">
-						<strong class="place">
-							2<span>nd</span>
-						</strong>
-
-						<span class="points">12 points</span>
-					</meter>
-					<meter class="race race10 mario_circuit" value="7" min="0" max="15" style="width: 28px; left: 352px;">
-						<strong class="place">
-							5<span>th</span>
-						</strong>
-						<span class="points">7 points</span>
-
-					</meter>
-				</progress>
-				<dl class="identity">
-					<dt class="name">Dave</dt>
-					<dd class="avatar character king_boo">
-						<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-					</dd>
-				</dl>
-
-			</div>
-			<div id="player_3" class="player funky_kong">
-				<p class="total">84</p>
-				<progress class="round" value="84" max="150" style="width: 338px;">
-					<meter class="race race1 dry_dry_ruins" value="10" min="0" max="15" style="width: 40px; left: 0px;">
-						<strong class="place">
-							3<span>rd</span>
-
-						</strong>
-						<span class="points">10 points</span>
-					</meter>
-					<meter class="race race2 gba_bowser_castle_3" value="0" min="0" max="15" style="width: 0px; left: 40px;">
-						<strong class="place">
-							12<span>th</span>
-						</strong>
-
-						<span class="points">0 points</span>
-					</meter>
-					<meter class="race race3 ds_desert_hills" value="4" min="0" max="15" style="width: 16px; left: 40px;">
-						<strong class="place">
-							8<span>th</span>
-						</strong>
-						<span class="points">4 points</span>
-
-					</meter>
-					<meter class="race race4 n64_mario_raceway" value="7" min="0" max="15" style="width: 28px; left: 56px;">
-						<strong class="place">
-							5<span>th</span>
-						</strong>
-						<span class="points">7 points</span>
-					</meter>
-
-					<meter class="race race5 ds_delfino_square" value="8" min="0" max="15" style="width: 32px; left: 84px;">
-						<strong class="place">
-							4<span>th</span>
-						</strong>
-						<span class="points">8 points</span>
-					</meter>
-					<meter class="race race6 n64_bowsers_castle" value="10" min="0" max="15" style="width: 40px; left: 116px;">
-
-						<strong class="place">
-							3<span>rd</span>
-						</strong>
-						<span class="points">10 points</span>
-					</meter>
-					<meter class="race race7 toads_factory" value="6" min="0" max="15" style="width: 24px; left: 156px;">
-						<strong class="place">
-
-							6<span>th</span>
-						</strong>
-						<span class="points">6 points</span>
-					</meter>
-					<meter class="race race8 bowsers_castle" value="12" min="0" max="15" style="width: 48px; left: 180px;">
-						<strong class="place">
-							2<span>nd</span>
-
-						</strong>
-						<span class="points">12 points</span>
-					</meter>
-					<meter class="race race9 moo_moo_meadows" value="15" min="0" max="15" style="width: 60px; left: 228px;">
-						<strong class="place">
-							1<span>st</span>
-						</strong>
-
-						<span class="points">15 points</span>
-					</meter>
-					<meter class="race race10 mario_circuit" value="12" min="0" max="15" style="width: 48px; left: 288px;">
-						<strong class="place">
-							2<span>nd</span>
-						</strong>
-						<span class="points">12 points</span>
-
-					</meter>
-				</progress>
-				<dl class="identity">
-					<dt class="name">Dan</dt>
-					<dd class="avatar character funky_kong">
-						<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-					</dd>
-				</dl>
-
-			</div>
-			<div id="player_4" class="player wario">
-				<p class="total">62</p>
-				<progress class="round" value="62" max="150" style="width: 250px;">
-					<meter class="race race1 dry_dry_ruins" value="5" min="0" max="15" style="width: 20px; left: 0px;">
-						<strong class="place">
-							7<span>th</span>
-
-						</strong>
-						<span class="points">5 points</span>
-					</meter>
-					<meter class="race race2 gba_bowser_castle_3" value="5" min="0" max="15" style="width: 20px; left: 20px;">
-						<strong class="place">
-							7<span>th</span>
-						</strong>
-
-						<span class="points">5 points</span>
-					</meter>
-					<meter class="race race3 ds_desert_hills" value="8" min="0" max="15" style="width: 32px; left: 40px;">
-						<strong class="place">
-							4<span>th</span>
-						</strong>
-						<span class="points">8 points</span>
-
-					</meter>
-					<meter class="race race4 n64_mario_raceway" value="0" min="0" max="15" style="width: 0px; left: 72px;">
-						<strong class="place">
-							12<span>th</span>
-						</strong>
-						<span class="points">0 points</span>
-					</meter>
-
-					<meter class="race race5 ds_delfino_square" value="12" min="0" max="15" style="width: 48px; left: 72px;">
-						<strong class="place">
-							2<span>nd</span>
-						</strong>
-						<span class="points">12 points</span>
-					</meter>
-					<meter class="race race6 n64_bowsers_castle" value="15" min="0" max="15" style="width: 60px; left: 120px;">
-
-						<strong class="place">
-							1<span>st</span>
-						</strong>
-						<span class="points">15 points</span>
-					</meter>
-					<meter class="race race7 toads_factory" value="0" min="0" max="15" style="width: 0px; left: 180px;">
-						<strong class="place">
-
-							12<span>th</span>
-						</strong>
-						<span class="points">0 points</span>
-					</meter>
-					<meter class="race race8 bowsers_castle" value="4" min="0" max="15" style="width: 16px; left: 180px;">
-						<strong class="place">
-							8<span>th</span>
-
-						</strong>
-						<span class="points">4 points</span>
-					</meter>
-					<meter class="race race9 moo_moo_meadows" value="8" min="0" max="15" style="width: 32px; left: 196px;">
-						<strong class="place">
-							4<span>th</span>
-						</strong>
-
-						<span class="points">8 points</span>
-					</meter>
-					<meter class="race race10 mario_circuit" value="5" min="0" max="15" style="width: 20px; left: 228px;">
-						<strong class="place">
-							7<span>th</span>
-						</strong>
-						<span class="points">5 points</span>
-
-					</meter>
-				</progress>
-				<dl class="identity">
-					<dt class="name">Martin</dt>
-					<dd class="avatar character wario">
-						<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-					</dd>
-				</dl>
-
-			</div>
-
-		</section>
-
-
-<script type="text/javascript" charset="utf-8">
-
-
-
-var cbfunc = function(data){
-	var results = data.query.results;
-	var article = document.createElement("article");
-	article.className = "race race1 dry_dry_ruins";
-	var html = "<h3>Race 1 <strong>Dry Dry Ruins</strong></h3>" +
-	"<ol>";
-	for (i in results){
-		html +=	'<li class="player">' +
-			'<h4>' + results[i].pos + '</h4>' +
-			'<dl class="identity">' +  
-				'<dt class="name">' + results[i].driver + '</dt>' +
-				'<dd class="avatar character king_boo">' + 
-					'<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>' +
-				'</dd>' +
-				'<dd class="points">+' + results[i].points + '</dd>' +
-				'<dd class="score">15</dd>' + 
-			'</dl>' +
-		'</li>';
-	}
-	html += "</ol>";
-	article.innerHTML = html;
-	document.getElementById("round_races").getElementsByTagName("div")[0].appendChild(article);
-};
-
-var getScript = function(url){
-    var head = document.getElementsByTagName("head")[0] || document.documentElement;
-    var script = document.createElement("script");
-    script.src = url;
-    script.onload = script.onreadystatechange = function(){
-        if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete"){
-            script.onload = script.onreadystatechange = null;
-            head.removeChild(script);
-        }
-    };
-    head.insertBefore(script, head.firstChild);
-}
-
-getScript("data.js");
-
-
-
-</script>
-
-
-		<section id="round_races">
-
-			<!-- <h2>Round Races</h2> -->
-
-			<div class="slider" style="width: 2640px">
-				<canvas id="round_races_curves" width="2569" height="312"></canvas>
-
-				<article class="race race1 dry_dry_ruins ">
-
-					<h3>Race 1 <strong>Dry Dry Ruins</strong></h3>
-					<ol>
-						<li class="player">
-							<h4>1</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-								<dd class="points">+15</dd>
-								<dd class="score">15</dd>
-							</dl>
-						</li>
-						<li class="player">
-							<h4>2</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+12</dd>
-								<dd class="score">12</dd>
-
-							</dl>
-						</li>
-						<li class="player">
-							<h4>3</h4>
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-
-								</dd>
-								<dd class="points">+10</dd>
-								<dd class="score">10</dd>
-							</dl>
-						</li>
-						<li><h4>4</h4></li>
-						<li><h4>5</h4></li>
-
-						<li><h4>6</h4></li>
-						<li class="player">
-							<h4>7</h4>
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-
-								</dd>
-								<dd class="points">+5</dd>
-								<dd class="score">5</dd>
-							</dl>
-						</li>
-						<li><h4>8</h4></li>
-						<li><h4>9</h4></li>
-
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-						<li><h4>12</h4></li>
-					</ol>
-				</article>
-				<article class="race race2 gba_bowser_castle_3 ">
-					<h3>Race 2 <strong>GBA Bowser Castle 3</strong></h3>
-
-					<ol>
-						<li><h4>1</h4></li>
-						<li><h4>2</h4></li>
-						<li><h4>3</h4></li>
-						<li><h4>4</h4></li>
-						<li class="player">
-							<h4>5</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+7</dd>
-								<dd class="score">19</dd>
-
-							</dl>
-						</li>
-						<li class="player">
-							<h4>6</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-
-								</dd>
-								<dd class="points">+6</dd>
-								<dd class="score">21</dd>
-							</dl>
-						</li>
-						<li class="player">
-							<h4>7</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+5</dd>
-								<dd class="score">10</dd>
-
-							</dl>
-						</li>
-						<li><h4>8</h4></li>
-						<li><h4>9</h4></li>
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-						<li class="player">
-
-							<h4>12</h4>
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-								</dd>
-								<dd class="points">+0</dd>
-
-								<dd class="score">10</dd>
-							</dl>
-						</li>
-					</ol>
-				</article>
-				<article class="race race3 ds_desert_hills ">
-					<h3>Race 3 <strong>DS Desert Hills</strong></h3>
-
-					<ol>
-						<li class="player">
-							<h4>1</h4>
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-
-								<dd class="points">+15</dd>
-								<dd class="score">34</dd>
-							</dl>
-						</li>
-						<li><h4>2</h4></li>
-						<li class="player">
-							<h4>3</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-								<dd class="points">+10</dd>
-								<dd class="score">31</dd>
-
-							</dl>
-						</li>
-						<li class="player">
-							<h4>4</h4>
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-
-								</dd>
-								<dd class="points">+8</dd>
-								<dd class="score">18</dd>
-							</dl>
-						</li>
-						<li><h4>5</h4></li>
-						<li><h4>6</h4></li>
-
-						<li><h4>7</h4></li>
-						<li class="player">
-							<h4>8</h4>
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-
-								</dd>
-								<dd class="points">+4</dd>
-								<dd class="score">14</dd>
-							</dl>
-						</li>
-						<li><h4>9</h4></li>
-						<li><h4>10</h4></li>
-
-						<li><h4>11</h4></li>
-						<li><h4>12</h4></li>
-					</ol>
-				</article>
-				<article class="race race4 n64_mario_raceway ">
-					<h3>Race 4 <strong>N64 Mario Raceway</strong></h3>
-					<ol>
-
-						<li class="player">
-							<h4>1</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-								<dd class="points">+15</dd>
-
-								<dd class="score">46</dd>
-							</dl>
-						</li>
-						<li><h4>2</h4></li>
-						<li><h4>3</h4></li>
-						<li><h4>4</h4></li>
-						<li class="player">
-
-							<h4>5</h4>
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-								</dd>
-								<dd class="points">+7</dd>
-
-								<dd class="score">21</dd>
-							</dl>
-						</li>
-						<li><h4>6</h4></li>
-						<li><h4>7</h4></li>
-						<li><h4>8</h4></li>
-						<li class="player">
-
-							<h4>9</h4>
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+3</dd>
-
-								<dd class="score">37</dd>
-							</dl>
-						</li>
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-						<li class="player">
-							<h4>12</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+0</dd>
-								<dd class="score">18</dd>
-
-							</dl>
-						</li>
-					</ol>
-				</article>
-				<article class="race race5 ds_delfino_square ">
-					<h3>Race 5 <strong>DS Delfino Square</strong></h3>
-					<ol>
-						<li class="player">
-
-							<h4>1</h4>
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+15</dd>
-
-								<dd class="score">52</dd>
-							</dl>
-						</li>
-						<li class="player">
-							<h4>2</h4>
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+12</dd>
-								<dd class="score">30</dd>
-							</dl>
-						</li>
-						<li class="player">
-
-							<h4>3</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-								<dd class="points">+10</dd>
-
-								<dd class="score">56</dd>
-							</dl>
-						</li>
-						<li class="player">
-							<h4>4</h4>
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-								</dd>
-								<dd class="points">+8</dd>
-								<dd class="score">29</dd>
-							</dl>
-						</li>
-						<li><h4>5</h4></li>
-
-						<li><h4>6</h4></li>
-						<li><h4>7</h4></li>
-						<li><h4>8</h4></li>
-						<li><h4>9</h4></li>
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-
-						<li><h4>12</h4></li>
-					</ol>
-				</article>
-				<article class="race race6 n64_bowsers_castle ">
-					<h3>Race 6 <strong>N64 Bowsers Castle</strong></h3>
-					<ol>
-						<li class="player">
-
-							<h4>1</h4>
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+15</dd>
-
-								<dd class="score">45</dd>
-							</dl>
-						</li>
-						<li><h4>2</h4></li>
-						<li class="player">
-							<h4>3</h4>
-							<dl class="identity">
-
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-								</dd>
-								<dd class="points">+10</dd>
-								<dd class="score">39</dd>
-							</dl>
-
-						</li>
-						<li class="player">
-							<h4>4</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-
-								<dd class="points">+8</dd>
-								<dd class="score">64</dd>
-							</dl>
-						</li>
-						<li><h4>5</h4></li>
-						<li class="player">
-							<h4>6</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+6</dd>
-								<dd class="score">58</dd>
-
-							</dl>
-						</li>
-						<li><h4>7</h4></li>
-						<li><h4>8</h4></li>
-						<li><h4>9</h4></li>
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-
-						<li><h4>12</h4></li>
-					</ol>
-				</article>
-				<article class="race race7 toads_factory ">
-					<h3>Race 7 <strong>Toads Factory</strong></h3>
-					<ol>
-						<li><h4>1</h4></li>
-
-						<li><h4>2</h4></li>
-						<li><h4>3</h4></li>
-						<li><h4>4</h4></li>
-						<li><h4>5</h4></li>
-						<li class="player">
-							<h4>6</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-								</dd>
-								<dd class="points">+6</dd>
-								<dd class="score">45</dd>
-
-							</dl>
-						</li>
-						<li class="player">
-							<h4>7</h4>
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-
-								</dd>
-								<dd class="points">+5</dd>
-								<dd class="score">63</dd>
-							</dl>
-						</li>
-						<li><h4>8</h4></li>
-						<li><h4>9</h4></li>
-
-						<li class="player">
-							<h4>10</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-								<dd class="points">+2</dd>
-
-								<dd class="score">66</dd>
-							</dl>
-						</li>
-						<li><h4>11</h4></li>
-						<li class="player">
-							<h4>12</h4>
-							<dl class="identity">
-
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+0</dd>
-								<dd class="score">45</dd>
-							</dl>
-
-						</li>
-					</ol>
-				</article>
-				<article class="race race8 bowsers_castle ">
-					<h3>Race 8 <strong>Bowsers Castle</strong></h3>
-					<ol>
-						<li class="player">
-							<h4>1</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+15</dd>
-								<dd class="score">78</dd>
-
-							</dl>
-						</li>
-						<li class="player">
-							<h4>2</h4>
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-
-								</dd>
-								<dd class="points">+12</dd>
-								<dd class="score">57</dd>
-							</dl>
-						</li>
-						<li class="player">
-							<h4>3</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-								<dd class="points">+10</dd>
-								<dd class="score">76</dd>
-
-							</dl>
-						</li>
-						<li><h4>4</h4></li>
-						<li><h4>5</h4></li>
-						<li><h4>6</h4></li>
-						<li><h4>7</h4></li>
-						<li class="player">
-
-							<h4>8</h4>
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+4</dd>
-
-								<dd class="score">49</dd>
-							</dl>
-						</li>
-						<li><h4>9</h4></li>
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-						<li><h4>12</h4></li>
-
-					</ol>
-				</article>
-				<article class="race race9 moo_moo_meadows ">
-					<h3>Race 9 <strong>Moo Moo Meadows</strong></h3>
-					<ol>
-						<li class="player">
-							<h4>1</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-								</dd>
-								<dd class="points">+15</dd>
-								<dd class="score">72</dd>
-
-							</dl>
-						</li>
-						<li class="player">
-							<h4>2</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-
-								</dd>
-								<dd class="points">+12</dd>
-								<dd class="score">88</dd>
-							</dl>
-						</li>
-						<li><h4>3</h4></li>
-						<li class="player">
-
-							<h4>4</h4>
-							<dl class="identity">
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+8</dd>
-
-								<dd class="score">57</dd>
-							</dl>
-						</li>
-						<li><h4>5</h4></li>
-						<li><h4>6</h4></li>
-						<li class="player">
-							<h4>7</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+5</dd>
-								<dd class="score">83</dd>
-
-							</dl>
-						</li>
-						<li><h4>8</h4></li>
-						<li><h4>9</h4></li>
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-						<li><h4>12</h4></li>
-
-					</ol>
-				</article>
-				<article class="race race10 mario_circuit ">
-					<h3>Race 10 <strong>Mario Circuit</strong></h3>
-					<ol>
-						<li class="player">
-							<h4>1</h4>
-
-							<dl class="identity">
-
-								<dt class="name">Alex</dt>
-								<dd class="avatar character bowser">
-									<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
-								</dd>
-								<dd class="points">+15</dd>
-								<dd class="score">98</dd>
-
-							</dl>
-						</li>
-						<li class="player">
-							<h4>2</h4>
-							<dl class="identity">
-
-								<dt class="name">Dan</dt>
-								<dd class="avatar character funky_kong">
-									<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
-
-								</dd>
-								<dd class="points">+12</dd>
-								<dd class="score">84</dd>
-							</dl>
-						</li>
-						<li><h4>3</h4></li>
-						<li><h4>4</h4></li>
-
-						<li class="player">
-							<h4>5</h4>
-							<dl class="identity">
-
-								<dt class="name">Dave</dt>
-								<dd class="avatar character king_boo">
-									<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
-								</dd>
-								<dd class="points">+7</dd>
-
-								<dd class="score">95</dd>
-							</dl>
-						</li>
-						<li><h4>6</h4></li>
-						<li class="player">
-							<h4>7</h4>
-							<dl class="identity">
-
-
-								<dt class="name">Martin</dt>
-								<dd class="avatar character wario">
-									<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
-								</dd>
-								<dd class="points">+5</dd>
-								<dd class="score">62</dd>
-							</dl>
-
-						</li>
-						<li><h4>8</h4></li>
-						<li><h4>9</h4></li>
-						<li><h4>10</h4></li>
-						<li><h4>11</h4></li>
-						<li><h4>12</h4></li>
-
-					</ol>
-				</article>
-
-			</div><!-- .slider -->
-
-		</section>
-
-
-		<section id="output">    
-
-			<table>
-				<tr>
-					<th>Player</th>
-
-					<th>Character</th>
-					<th>Vehicle</th>
-					<th>Race 1</th>
-					<th>Race 2</th>
-					<th>Race 3</th>
-					<th>Race 4</th>
-
-					<th>Race 5</th>
-					<th>Race 6</th>
-					<th>Race 7</th>
-					<th>Race 8</th>
-					<th>Race 9</th>
-					<th>Race 10</th>
-
-					<th>Total</th>
-				</tr>
-				<tr id="courses">
-					<td>&nbsp;</td>
-					<td></td>
-					<td></td>
-					<td>Dry Dry Ruins</td>
-					<td>GBA Bowser Castle 3</td>
-
-					<td>DS Desert Hills</td>
-					<td>N64 Mario Raceway</td>
-					<td>DS Delfino Square</td>
-					<td>N64 Bowsers Castle</td>
-					<td>Toads Factory</td>
-					<td>Bowsers Castle</td>
-
-					<td>Moo Moo Meadows</td>
-					<td>Mario Circuit</td>
-					<td></td>
-				</tr>
-
-				<tr>
-					<td>Alex</td>
-					<td>Bowser</td>
-
-					<td>Flame Flyer</td>
-					<td>2</td>
-					<td>5</td>
-					<td>1</td>
-					<td>9</td>
-					<td>1</td>
-
-					<td>6</td>
-					<td>7</td>
-					<td>1</td>
-					<td>7</td>
-					<td>1</td>
-					<td>98</td>
-
-				</tr>
-				<tr>
-					<td>Dave</td>
-					<td>King Boo</td>
-					<td>Standard Kart L</td>
-					<td>1</td>
-					<td>6</td>
-
-					<td>3</td>
-					<td>1</td>
-					<td>3</td>
-					<td>4</td>
-					<td>10</td>
-					<td>3</td>
-
-					<td>2</td>
-					<td>5</td>
-					<td>95</td>
-				</tr>
-				<tr>
-					<td>Dan</td>
-					<td>Funky Kong</td>
-
-					<td>Standard Bike L</td>
-					<td>3</td>
-					<td>12</td>
-					<td>8</td>
-					<td>5</td>
-					<td>4</td>
-
-					<td>3</td>
-					<td>6</td>
-					<td>2</td>
-					<td>1</td>
-					<td>2</td>
-					<td>84</td>
-
-				</tr>
-				<tr>
-					<td>Martin</td>
-					<td>Wario</td>
-					<td>Offroader</td>
-					<td>7</td>
-					<td>7</td>
-
-					<td>4</td> 
-					<td>12</td>
-					<td>2</td>
-					<td>1</td>
-					<td>12</td>
-					<td>8</td>
-
-					<td>4</td>
-					<td>7</td>
-					<td>62</td>
-				</tr>
-			</table>
-
-		</section>
-
-	</div> <!-- /#wrap -->
-
-
-	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-	<script type="text/javascript">
-	_uacct = "UA-6925512-6";
-	urchinTracker();
-	</script>
-
-</body>
-</html>
+	<script type="text/javascript" charset="utf-8">
+	var yqlquery = 'USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.races.xml?5" AS formula1.races;\n\
+	USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.race.results.xml?5" AS formula1.race.results;\n\
+	\n\
+	select *\n\
+	from formula1.race.results\n\
+	where season="2009"\n\
+	and race in (\n\
+		select round from formula1.races where season="2009" \n\
+		);';
+		function racesJsonPrettify(data) {
+			var json = {};
+			json.races = [];
+			$.each(data.query.results.Races,function(i,oRace){
+				var nRace = {
+					name: oRace.raceName,
+					results: []
+				};
+				for(var j=0;j<oRace.Results.length;j++) {
+					var res = oRace.Results[j];
+					var resOut = {
+						pos: res.position,
+						driver: res.Driver.givenName + ' ' + res.Driver.familyName,
+						team: res.Constructor.name,
+						laps: parseInt(res.laps,10),
+						points: parseInt(res.points,10),
+						status: res.status,
+						grid: parseInt(res.grid,10),
+						num: parseInt(res.number,10),
+						driverId: res.Driver.driverId
+					};
+					if(res.Time) {
+						resOut.time = res.Time.time;
+					}
+					nRace.results.push(resOut);
+				}
+				json.races.push(nRace);
+			});
+			return json;
+		};
+		$.ajax({
+			type: 'GET',
+			dataType: 'jsonp',
+			url:'http://query.yahooapis.com/v1/public/yql',
+			data:{
+				format:'json',
+				q:yqlquery
+			},
+			error: function() {
+				alert('Something wrong retrieving from YQL.')
+			},
+			success:function(data) {
+				data = racesJsonPrettify(data);
+				var races = data.races;
+				var driversSums = {};
+				for (i in races){
+					var article = document.createElement("article");
+					article.className = "race race1 dry_dry_ruins";
+					var html = '<h3>' + data.races[i].name + '</strong></h3>' +
+					"<ol>";
+					for (j in races[i].results){
+						if (!driversSums[races[i].results[j].driverId]) {
+							driversSums[races[i].results[j].driverId] = races[i].results[j].points;
+						} else {
+							driversSums[races[i].results[j].driverId] += races[i].results[j].points;
+						}
+						html +=	'<li class="player">' +
+						'<h4>' + races[i].results[j].pos + '</h4>' +
+						'<dl class="identity">' +  
+						'<dt class="name">' + races[i].results[j].driver + '</dt>' +
+						'<dd class="avatar character king_boo">' + 
+						'<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>' +
+						'</dd>' +
+						'<dd class="points">+' + races[i].results[j].points + '</dd>' +
+						'<dd class="score">' + driversSums[races[i].results[j].driverId] + '</dd>' + 
+						'</dl>' +
+						'</li>';
+					}
+					html += "</ol>";
+					article.innerHTML = html;
+					document.getElementById("round_races").getElementsByTagName("div")[0].appendChild(article);	
+				}
+			}
+		});
+		</script>
+		<title>Round &rsaquo; Friday, 11 Dec 2009</title>
+	</head>
+	
+	<body class="round">
+		<div id="wrap"> 
+			<h1>Round &rsaquo; Friday, 11 Dec 2009</h1>
+
+			<section id="graph">
+				<div class="graph_lines">
+
+					<label class="zero">0</label>
+					<div><label>25</label></div>
+					<div><label>50</label></div>
+					<div><label>75</label></div>
+					<div><label>100</label></div>
+					<div><label>125</label></div>
+
+					<div><label>150</label></div>
+				</div>
+
+				<canvas id="curves" width="600" height="260"></canvas>
+
+				<div id="player_1" class="player bowser">
+					<p class="total">98</p>
+					<progress class="round" value="98" max="150" style="width: 394px;">
+						<meter class="race race1 dry_dry_ruins" value="12" min="0" max="15" style="width: 48px; left: 0px;">
+							<strong class="place">
+
+								2<span>nd</span>
+							</strong>
+							<span class="points">12 points</span>
+						</meter>
+						<meter class="race race2 gba_bowser_castle_3" value="7" min="0" max="15" style="width: 28px; left: 48px;">
+							<strong class="place">
+								5<span>th</span>
+
+							</strong>
+							<span class="points">7 points</span>
+						</meter>
+						<meter class="race race3 ds_desert_hills" value="15" min="0" max="15" style="width: 60px; left: 76px;">
+							<strong class="place">
+								1<span>st</span>
+							</strong>
+
+							<span class="points">15 points</span>
+						</meter>
+						<meter class="race race4 n64_mario_raceway" value="3" min="0" max="15" style="width: 12px; left: 136px;">
+							<strong class="place">
+								9<span>th</span>
+							</strong>
+							<span class="points">3 points</span>
+
+						</meter>
+						<meter class="race race5 ds_delfino_square" value="15" min="0" max="15" style="width: 60px; left: 148px;">
+							<strong class="place">
+								1<span>st</span>
+							</strong>
+							<span class="points">15 points</span>
+						</meter>
+
+						<meter class="race race6 n64_bowsers_castle" value="6" min="0" max="15" style="width: 24px; left: 208px;">
+							<strong class="place">
+								6<span>th</span>
+							</strong>
+							<span class="points">6 points</span>
+						</meter>
+						<meter class="race race7 toads_factory" value="5" min="0" max="15" style="width: 20px; left: 232px;">
+
+							<strong class="place">
+								7<span>th</span>
+							</strong>
+							<span class="points">5 points</span>
+						</meter>
+						<meter class="race race8 bowsers_castle" value="15" min="0" max="15" style="width: 60px; left: 252px;">
+							<strong class="place">
+
+								1<span>st</span>
+							</strong>
+							<span class="points">15 points</span>
+						</meter>
+						<meter class="race race9 moo_moo_meadows" value="5" min="0" max="15" style="width: 20px; left: 312px;">
+							<strong class="place">
+								7<span>th</span>
+
+							</strong>
+							<span class="points">5 points</span>
+						</meter>
+						<meter class="race race10 mario_circuit" value="15" min="0" max="15" style="width: 60px; left: 332px;">
+							<strong class="place">
+								1<span>st</span>
+							</strong>
+
+							<span class="points">15 points</span>
+						</meter>
+					</progress>
+					<dl class="identity">
+						<dt class="name">Alex</dt>
+						<dd class="avatar character bowser">
+							<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>
+						</dd>
+
+					</dl>
+
+				</div>
+				<div id="player_2" class="player king_boo">
+					<p class="total">95</p>
+					<progress class="round" value="95" max="150" style="width: 382px;">
+						<meter class="race race1 dry_dry_ruins" value="15" min="0" max="15" style="width: 60px; left: 0px;">
+							<strong class="place">
+								1<span>st</span>
+
+							</strong>
+							<span class="points">15 points</span>
+						</meter>
+						<meter class="race race2 gba_bowser_castle_3" value="6" min="0" max="15" style="width: 24px; left: 60px;">
+							<strong class="place">
+								6<span>th</span>
+							</strong>
+
+							<span class="points">6 points</span>
+						</meter>
+						<meter class="race race3 ds_desert_hills" value="10" min="0" max="15" style="width: 40px; left: 84px;">
+							<strong class="place">
+								3<span>rd</span>
+							</strong>
+							<span class="points">10 points</span>
+
+						</meter>
+						<meter class="race race4 n64_mario_raceway" value="15" min="0" max="15" style="width: 60px; left: 124px;">
+							<strong class="place">
+								1<span>st</span>
+							</strong>
+							<span class="points">15 points</span>
+						</meter>
+
+						<meter class="race race5 ds_delfino_square" value="10" min="0" max="15" style="width: 40px; left: 184px;">
+							<strong class="place">
+								3<span>rd</span>
+							</strong>
+							<span class="points">10 points</span>
+						</meter>
+						<meter class="race race6 n64_bowsers_castle" value="8" min="0" max="15" style="width: 32px; left: 224px;">
+
+							<strong class="place">
+								4<span>th</span>
+							</strong>
+							<span class="points">8 points</span>
+						</meter>
+						<meter class="race race7 toads_factory" value="2" min="0" max="15" style="width: 8px; left: 256px;">
+							<strong class="place">
+
+								10<span>th</span>
+							</strong>
+							<span class="points">2 points</span>
+						</meter>
+						<meter class="race race8 bowsers_castle" value="10" min="0" max="15" style="width: 40px; left: 264px;">
+							<strong class="place">
+								3<span>rd</span>
+
+							</strong>
+							<span class="points">10 points</span>
+						</meter>
+						<meter class="race race9 moo_moo_meadows" value="12" min="0" max="15" style="width: 48px; left: 304px;">
+							<strong class="place">
+								2<span>nd</span>
+							</strong>
+
+							<span class="points">12 points</span>
+						</meter>
+						<meter class="race race10 mario_circuit" value="7" min="0" max="15" style="width: 28px; left: 352px;">
+							<strong class="place">
+								5<span>th</span>
+							</strong>
+							<span class="points">7 points</span>
+
+						</meter>
+					</progress>
+					<dl class="identity">
+						<dt class="name">Dave</dt>
+						<dd class="avatar character king_boo">
+							<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>
+						</dd>
+					</dl>
+
+				</div>
+				<div id="player_3" class="player funky_kong">
+					<p class="total">84</p>
+					<progress class="round" value="84" max="150" style="width: 338px;">
+						<meter class="race race1 dry_dry_ruins" value="10" min="0" max="15" style="width: 40px; left: 0px;">
+							<strong class="place">
+								3<span>rd</span>
+
+							</strong>
+							<span class="points">10 points</span>
+						</meter>
+						<meter class="race race2 gba_bowser_castle_3" value="0" min="0" max="15" style="width: 0px; left: 40px;">
+							<strong class="place">
+								12<span>th</span>
+							</strong>
+
+							<span class="points">0 points</span>
+						</meter>
+						<meter class="race race3 ds_desert_hills" value="4" min="0" max="15" style="width: 16px; left: 40px;">
+							<strong class="place">
+								8<span>th</span>
+							</strong>
+							<span class="points">4 points</span>
+
+						</meter>
+						<meter class="race race4 n64_mario_raceway" value="7" min="0" max="15" style="width: 28px; left: 56px;">
+							<strong class="place">
+								5<span>th</span>
+							</strong>
+							<span class="points">7 points</span>
+						</meter>
+
+						<meter class="race race5 ds_delfino_square" value="8" min="0" max="15" style="width: 32px; left: 84px;">
+							<strong class="place">
+								4<span>th</span>
+							</strong>
+							<span class="points">8 points</span>
+						</meter>
+						<meter class="race race6 n64_bowsers_castle" value="10" min="0" max="15" style="width: 40px; left: 116px;">
+
+							<strong class="place">
+								3<span>rd</span>
+							</strong>
+							<span class="points">10 points</span>
+						</meter>
+						<meter class="race race7 toads_factory" value="6" min="0" max="15" style="width: 24px; left: 156px;">
+							<strong class="place">
+
+								6<span>th</span>
+							</strong>
+							<span class="points">6 points</span>
+						</meter>
+						<meter class="race race8 bowsers_castle" value="12" min="0" max="15" style="width: 48px; left: 180px;">
+							<strong class="place">
+								2<span>nd</span>
+
+							</strong>
+							<span class="points">12 points</span>
+						</meter>
+						<meter class="race race9 moo_moo_meadows" value="15" min="0" max="15" style="width: 60px; left: 228px;">
+							<strong class="place">
+								1<span>st</span>
+							</strong>
+
+							<span class="points">15 points</span>
+						</meter>
+						<meter class="race race10 mario_circuit" value="12" min="0" max="15" style="width: 48px; left: 288px;">
+							<strong class="place">
+								2<span>nd</span>
+							</strong>
+							<span class="points">12 points</span>
+
+						</meter>
+					</progress>
+					<dl class="identity">
+						<dt class="name">Dan</dt>
+						<dd class="avatar character funky_kong">
+							<div><img src="_base/img/character_avatars.png" alt="Funky Kong" /></div>
+						</dd>
+					</dl>
+
+				</div>
+				<div id="player_4" class="player wario">
+					<p class="total">62</p>
+					<progress class="round" value="62" max="150" style="width: 250px;">
+						<meter class="race race1 dry_dry_ruins" value="5" min="0" max="15" style="width: 20px; left: 0px;">
+							<strong class="place">
+								7<span>th</span>
+
+							</strong>
+							<span class="points">5 points</span>
+						</meter>
+						<meter class="race race2 gba_bowser_castle_3" value="5" min="0" max="15" style="width: 20px; left: 20px;">
+							<strong class="place">
+								7<span>th</span>
+							</strong>
+
+							<span class="points">5 points</span>
+						</meter>
+						<meter class="race race3 ds_desert_hills" value="8" min="0" max="15" style="width: 32px; left: 40px;">
+							<strong class="place">
+								4<span>th</span>
+							</strong>
+							<span class="points">8 points</span>
+
+						</meter>
+						<meter class="race race4 n64_mario_raceway" value="0" min="0" max="15" style="width: 0px; left: 72px;">
+							<strong class="place">
+								12<span>th</span>
+							</strong>
+							<span class="points">0 points</span>
+						</meter>
+
+						<meter class="race race5 ds_delfino_square" value="12" min="0" max="15" style="width: 48px; left: 72px;">
+							<strong class="place">
+								2<span>nd</span>
+							</strong>
+							<span class="points">12 points</span>
+						</meter>
+						<meter class="race race6 n64_bowsers_castle" value="15" min="0" max="15" style="width: 60px; left: 120px;">
+
+							<strong class="place">
+								1<span>st</span>
+							</strong>
+							<span class="points">15 points</span>
+						</meter>
+						<meter class="race race7 toads_factory" value="0" min="0" max="15" style="width: 0px; left: 180px;">
+							<strong class="place">
+
+								12<span>th</span>
+							</strong>
+							<span class="points">0 points</span>
+						</meter>
+						<meter class="race race8 bowsers_castle" value="4" min="0" max="15" style="width: 16px; left: 180px;">
+							<strong class="place">
+								8<span>th</span>
+
+							</strong>
+							<span class="points">4 points</span>
+						</meter>
+						<meter class="race race9 moo_moo_meadows" value="8" min="0" max="15" style="width: 32px; left: 196px;">
+							<strong class="place">
+								4<span>th</span>
+							</strong>
+
+							<span class="points">8 points</span>
+						</meter>
+						<meter class="race race10 mario_circuit" value="5" min="0" max="15" style="width: 20px; left: 228px;">
+							<strong class="place">
+								7<span>th</span>
+							</strong>
+							<span class="points">5 points</span>
+
+						</meter>
+					</progress>
+					<dl class="identity">
+						<dt class="name">Martin</dt>
+						<dd class="avatar character wario">
+							<div><img src="_base/img/character_avatars.png" alt="Wario" /></div>
+						</dd>
+					</dl>
+
+				</div>
+
+			</section>
+
+			<section id="round_races">
+
+				<!-- <h2>Round Races</h2> -->
+
+				<div class="slider" style="width: 5835px">
+					<canvas id="round_races_curves" width="5664" height="312"></canvas>
+				</div><!-- .slider -->
+
+			</section>
+
+
+			<section id="output">    
+
+				<table>
+					<tr>
+						<th>Player</th>
+
+						<th>Character</th>
+						<th>Vehicle</th>
+						<th>Race 1</th>
+						<th>Race 2</th>
+						<th>Race 3</th>
+						<th>Race 4</th>
+
+						<th>Race 5</th>
+						<th>Race 6</th>
+						<th>Race 7</th>
+						<th>Race 8</th>
+						<th>Race 9</th>
+						<th>Race 10</th>
+
+						<th>Total</th>
+					</tr>
+					<tr id="courses">
+						<td>&nbsp;</td>
+						<td></td>
+						<td></td>
+						<td>Dry Dry Ruins</td>
+						<td>GBA Bowser Castle 3</td>
+
+						<td>DS Desert Hills</td>
+						<td>N64 Mario Raceway</td>
+						<td>DS Delfino Square</td>
+						<td>N64 Bowsers Castle</td>
+						<td>Toads Factory</td>
+						<td>Bowsers Castle</td>
+
+						<td>Moo Moo Meadows</td>
+						<td>Mario Circuit</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Alex</td>
+						<td>Bowser</td>
+
+						<td>Flame Flyer</td>
+						<td>2</td>
+						<td>5</td>
+						<td>1</td>
+						<td>9</td>
+						<td>1</td>
+
+						<td>6</td>
+						<td>7</td>
+						<td>1</td>
+						<td>7</td>
+						<td>1</td>
+						<td>98</td>
+
+					</tr>
+					<tr>
+						<td>Dave</td>
+						<td>King Boo</td>
+						<td>Standard Kart L</td>
+						<td>1</td>
+						<td>6</td>
+
+						<td>3</td>
+						<td>1</td>
+						<td>3</td>
+						<td>4</td>
+						<td>10</td>
+						<td>3</td>
+
+						<td>2</td>
+						<td>5</td>
+						<td>95</td>
+					</tr>
+					<tr>
+						<td>Dan</td>
+						<td>Funky Kong</td>
+
+						<td>Standard Bike L</td>
+						<td>3</td>
+						<td>12</td>
+						<td>8</td>
+						<td>5</td>
+						<td>4</td>
+
+						<td>3</td>
+						<td>6</td>
+						<td>2</td>
+						<td>1</td>
+						<td>2</td>
+						<td>84</td>
+
+					</tr>
+					<tr>
+						<td>Martin</td>
+						<td>Wario</td>
+						<td>Offroader</td>
+						<td>7</td>
+						<td>7</td>
+
+						<td>4</td> 
+						<td>12</td>
+						<td>2</td>
+						<td>1</td>
+						<td>12</td>
+						<td>8</td>
+
+						<td>4</td>
+						<td>7</td>
+						<td>62</td>
+					</tr>
+				</table>
+
+			</section>
+
+		</div> <!-- /#wrap -->
+
+
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		_uacct = "UA-6925512-6";
+		urchinTracker();
+		</script>
+
+	</body>
+	</html>
