@@ -42,7 +42,7 @@
 	position: absolute;
 	margin-left: -35px;
 	left: 50%;
-	top: 110px;
+	top: 100px;
 	width: 70px;
 	height: 25px;
 }
@@ -287,7 +287,7 @@ th {
 
 #graph .identity .name {
     padding-left: 5px;
-    font-size: 48px;
+    font-size: 30px;
     line-height: 40px;
     letter-spacing: -0.04em;
     display: inline;
@@ -301,7 +301,7 @@ th {
     text-align: right;
     display: block;
     width: 100px;
-    font-size: 42px;
+    font-size: 30px;
     line-height: 40px;
     
     letter-spacing: -0.04em;
@@ -553,6 +553,7 @@ button[disabled]:active
 }
 
 #round_races .avatar {
+	display: none;
     position: absolute;
     top: 0px;
     left: 30px;
@@ -568,7 +569,7 @@ button[disabled]:active
 #round_races .name {
     position: absolute;
     top: 0px;
-    left: 78px;
+    left: 32px;
     font-size: 19px;
     letter-spacing: -0.03em;
     font-weight: bold;

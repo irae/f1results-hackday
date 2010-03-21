@@ -1,4 +1,3 @@
-
 // Globals
 
 var season = _GET('season') || '2009';
