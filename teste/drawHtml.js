@@ -156,7 +156,7 @@ function printRaceTables(data) {
 	var driversSums = {};
 	for (i in races){
 		var article = document.createElement("article");
-		article.className = "race race1 dry_dry_ruins";
+		article.className = "race race"+i;
 		var html = '<h3>' + data.races[i].name + '</strong></h3>' +
 		"<ol>";
 		for (j in races[i].results){

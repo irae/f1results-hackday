@@ -223,7 +223,7 @@ var stageInit = function(){
 
 
 
-    drawCanvas();
+    // drawCanvas();
 
 
     // graph animation functions
