@@ -42,103 +42,140 @@ function racesJsonPrettify(data) {
 };
 
 
+var pixelPerPoints = 4;
+
+var players = {};
+var playerCount = 0;
+
 function printDriverInfos(data) {
 	console.debug(data.races);
-	var players = {};
 	
 	$.each(data.races,function(i,race){
 		
 		$.each(race.results,function(j,result){
 			var driver = players[result.driverId] || (players[result.driverId] = {
-				name: result.driver,
+				driver: result.driver,
+				playerCount: ++playerCount,
+				driverId: result.driverId,
+				sumPoints: 0,
 				racesRun:[]
 			});
 			driver.racesRun.push(i+1);
+			driver.sumPoints += result.points;
 		});
 	});
+	
 	console.dir(players);
-	html = '<div id="player_1" class="player bowser">'+
-	'	<p class="total">98</p>'+
-	'	<progress class="round" value="98" max="150" style="width: 394px;">'+
-	'		<meter class="race race1 dry_dry_ruins" value="12" min="0" max="15" style="width: 48px; left: 0px;">'+
-	'			<strong class="place">'+
-    ''+
-	'				2<span>nd</span>'+
-	'			</strong>'+
-	'			<span class="points">12 points</span>'+
-	'		</meter>'+
-	'		<meter class="race race2 gba_bowser_castle_3" value="7" min="0" max="15" style="width: 28px; left: 48px;">'+
-	'			<strong class="place">'+
-	'				5<span>th</span>'+
-    ''+
-	'			</strong>'+
-	'			<span class="points">7 points</span>'+
-	'		</meter>'+
-	'		<meter class="race race3 ds_desert_hills" value="15" min="0" max="15" style="width: 60px; left: 76px;">'+
-	'			<strong class="place">'+
-	'				1<span>st</span>'+
-	'			</strong>'+
-    ''+
-	'			<span class="points">15 points</span>'+
-	'		</meter>'+
-	'		<meter class="race race4 n64_mario_raceway" value="3" min="0" max="15" style="width: 12px; left: 136px;">'+
-	'			<strong class="place">'+
-	'				9<span>th</span>'+
-	'			</strong>'+
-	'			<span class="points">3 points</span>'+
-    ''+
-	'		</meter>'+
-	'		<meter class="race race5 ds_delfino_square" value="15" min="0" max="15" style="width: 60px; left: 148px;">'+
-	'			<strong class="place">'+
-	'				1<span>st</span>'+
-	'			</strong>'+
-	'			<span class="points">15 points</span>'+
-	'		</meter>'+
-    ''+
-	'		<meter class="race race6 n64_bowsers_castle" value="6" min="0" max="15" style="width: 24px; left: 208px;">'+
-	'			<strong class="place">'+
-	'				6<span>th</span>'+
-	'			</strong>'+
-	'			<span class="points">6 points</span>'+
-	'		</meter>'+
-	'		<meter class="race race7 toads_factory" value="5" min="0" max="15" style="width: 20px; left: 232px;">'+
-    ''+
-	'			<strong class="place">'+
-	'				7<span>th</span>'+
-	'			</strong>'+
-	'			<span class="points">5 points</span>'+
-	'		</meter>'+
-	'		<meter class="race race8 bowsers_castle" value="15" min="0" max="15" style="width: 60px; left: 252px;">'+
-	'			<strong class="place">'+
-    ''+
-	'				1<span>st</span>'+
-	'			</strong>'+
-	'			<span class="points">15 points</span>'+
-	'		</meter>'+
-	'		<meter class="race race9 moo_moo_meadows" value="5" min="0" max="15" style="width: 20px; left: 312px;">'+
-	'			<strong class="place">'+
-	'				7<span>th</span>'+
-    ''+
-	'			</strong>'+
-	'			<span class="points">5 points</span>'+
-	'		</meter>'+
-	'		<meter class="race race10 mario_circuit" value="15" min="0" max="15" style="width: 60px; left: 332px;">'+
-	'			<strong class="place">'+
-	'				1<span>st</span>'+
-	'			</strong>'+
-    ''+
-	'			<span class="points">15 points</span>'+
-	'		</meter>'+
-	'	</progress>'+
-	'	<dl class="identity">'+
-	'		<dt class="name">Alex</dt>'+
-	'		<dd class="avatar character bowser">'+
-	'			<div><img src="_base/img/character_avatars.png" alt="Bowser" /></div>'+
-	'		</dd>'+
-    ''+
-	'	</dl>'+
-    ''+
-	'</div>';
+	
+	var html = '';
+	
+	$.each(players,function(i,player){
+		
+		var pointsStack = 0;
+		
+		html += '<div id="player_'+player.playerCount+'" class="player '+player.driverId+'" style="top:'+((player.playerCount-1)*70)+'px">'+
+			'<p class="total">'+player.sumPoints+'</p>'+
+			'<progress class="round" value="'+player.sumPoints+'" max="'+(data.races.length*10)+'" style="width: '+(pixelPerPoints*player.sumPoints+2)+'px;">';
+		
+		$.each(data.races,function(j,race){
+			var hasRun = false;
+			var thisRacePoints = 0;
+			$.each(race.results,function(k,result){
+				if(result.driverId == player.driverId) {
+					hasRun = true;
+					thisRacePoints = result.points;
+					thisRacePos = result.pos;
+				} else {
+					thisRacePos = 'X';
+				}
+			});			
+
+			html += '\n\n<meter class="race race'+j+' '+race.name.toLowerCase().replace(/[\t ]/,'_')+'" value="'+thisRacePoints+'" min="0" max="10" style="width: '+(thisRacePoints*pixelPerPoints)+'px; left: '+pointsStack+'px;">'+
+						'<strong class="place">'+
+							thisRacePos+//'<span>nd</span>'+
+						'</strong>'+
+						'<span class="points">'+thisRacePoints+' points</span>'+
+					'</meter>';
+			pointsStack += thisRacePoints;
+		});
+		
+		// '		<meter class="race race2 gba_bowser_castle_3" value="7" min="0" max="15" style="width: 28px; left: 48px;">'+
+		// '			<strong class="place">'+
+		// '				5<span>th</span>'+
+		// 	    ''+
+		// '			</strong>'+
+		// '			<span class="points">7 points</span>'+
+		// '		</meter>'+
+		// '		<meter class="race race3 ds_desert_hills" value="15" min="0" max="15" style="width: 60px; left: 76px;">'+
+		// '			<strong class="place">'+
+		// '				1<span>st</span>'+
+		// '			</strong>'+
+		// 	    ''+
+		// '			<span class="points">15 points</span>'+
+		// '		</meter>'+
+		// '		<meter class="race race4 n64_mario_raceway" value="3" min="0" max="15" style="width: 12px; left: 136px;">'+
+		// '			<strong class="place">'+
+		// '				9<span>th</span>'+
+		// '			</strong>'+
+		// '			<span class="points">3 points</span>'+
+		// 	    ''+
+		// '		</meter>'+
+		// '		<meter class="race race5 ds_delfino_square" value="15" min="0" max="15" style="width: 60px; left: 148px;">'+
+		// '			<strong class="place">'+
+		// '				1<span>st</span>'+
+		// '			</strong>'+
+		// '			<span class="points">15 points</span>'+
+		// '		</meter>'+
+		// 	    ''+
+		// '		<meter class="race race6 n64_bowsers_castle" value="6" min="0" max="15" style="width: 24px; left: 208px;">'+
+		// '			<strong class="place">'+
+		// '				6<span>th</span>'+
+		// '			</strong>'+
+		// '			<span class="points">6 points</span>'+
+		// '		</meter>'+
+		// '		<meter class="race race7 toads_factory" value="5" min="0" max="15" style="width: 20px; left: 232px;">'+
+		// 	    ''+
+		// '			<strong class="place">'+
+		// '				7<span>th</span>'+
+		// '			</strong>'+
+		// '			<span class="points">5 points</span>'+
+		// '		</meter>'+
+		// '		<meter class="race race8 bowsers_castle" value="15" min="0" max="15" style="width: 60px; left: 252px;">'+
+		// '			<strong class="place">'+
+		// 	    ''+
+		// '				1<span>st</span>'+
+		// '			</strong>'+
+		// '			<span class="points">15 points</span>'+
+		// '		</meter>'+
+		// '		<meter class="race race9 moo_moo_meadows" value="5" min="0" max="15" style="width: 20px; left: 312px;">'+
+		// '			<strong class="place">'+
+		// '				7<span>th</span>'+
+		// 	    ''+
+		// '			</strong>'+
+		// '			<span class="points">5 points</span>'+
+		// '		</meter>'+
+		// '		<meter class="race race10 mario_circuit" value="15" min="0" max="15" style="width: 60px; left: 332px;">'+
+		// '			<strong class="place">'+
+		// '				1<span>st</span>'+
+		// '			</strong>'+
+		// 	    ''+
+		// '			<span class="points">15 points</span>'+
+		// '		</meter>'+
+		html += '	</progress>'+
+			'<dl class="identity">'+
+				'<dt class="name">'+player.driver.replace(/.* /,'')+'</dt>'+
+				'<dd class="avatar character '+player.driverId+'">'+
+					'<div><img src="_base/img/character_avatars.png" alt="'+player.driver+'" /></div>'+
+				'</dd>'+
+			'</dl>'+
+		'</div>';
+		// console.info(html);
+	});
+	
+	$('#graph').css({
+		height: (playerCount*70)+'px'
+	}).append(html);
+	
 };
 
 function printRaceTables(data) {

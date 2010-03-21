@@ -87,7 +87,7 @@ th {
     margin: 40px 0 10px 80px;
     background: #FFF;
     position: relative;
-    height: 280px;
+    min-height: 280px;
 }
 
 
@@ -141,9 +141,6 @@ th {
     top: 0;
     left: 0;
 }
-#graph #player_2 { top: 70px; }
-#graph #player_3 { top: 140px; }
-#graph #player_4 { top: 210px; }
 
 #graph progress.round {
     border: 1px solid #AAA;
