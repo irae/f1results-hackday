@@ -74,6 +74,27 @@
 	margin-left: 5px;
 }
 
+#menuYears {
+	width:360px; 
+	position:relative;
+	left:-140px;
+	background:#FFF;
+	z-index:1;
+	border:1px solid #ccc;
+	display:none;
+	padding:0 0 0 5px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow:5px 5px 5px rgba(0,0,0,0.4);
+	-webkit-box-shadow:5px 5px rgba(0,0,0,0.4);height:100%;
+	font-family: 'ITCOfficinaSerifStdBook';
+	
+}
+#menuYears ul {float:left; overflow:hidden; width:40px; margin:0;padding:10px;}
+#menuYears ul li:hover {background:yellow; font-weight:bold; cursor:pointer; cursor: hand;}
+#menuYears ul li { cursor:pointer; cursor: hand;}
+
 #content{
 	clear: both;
 	background: #FFF;

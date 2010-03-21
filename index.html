@@ -21,94 +21,92 @@
 			</header>
 
 			<style type="text/css" media="screen">
-				#menuYears { width:300px; position:absolute; left:0; top:0;}
-				#menuYears ul {float:left; overflow:hidden; width:40px; background:#FFF;}
-				#menuYears ul li:hover {background:yellow; font-weight:bold;}
+
 			</style>
-					<div id="menuYears">
-									<ul>
-										<li>2000</li>
-										<li>2001</li>	
-										<li>2002</li>	
-										<li>2003</li>	
-										<li>2004</li>	
-										<li>2005</li>	
-										<li>2006</li>	
-										<li>2007</li>	
-										<li>2008</li>	
-										<li>2009</li>
-									</ul>
-									<ul>	
-										<li>1990</li>	
-										<li>1991</li>	
-										<li>1992</li>	
-										<li>1993</li>	
-										<li>1994</li>	
-										<li>1995</li>	
-										<li>1996</li>	
-										<li>1997</li>	
-										<li>1998</li>	
-										<li>1999</li>	
-									</ul>
-									<ul>
-										<li>1980</li>			
-										<li>1981</li>						
-										<li>1982</li>						
-										<li>1983</li>						
-										<li>1984</li>						
-										<li>1985</li>						
-										<li>1986</li>						
-										<li>1987</li>						
-										<li>1988</li>						
-										<li>1989</li>						
-									</ul>
-									<ul>
-										<li>1970</li>	
-										<li>1971</li>						
-										<li>1972</li>						
-										<li>1973</li>						
-										<li>1974</li>						
-										<li>1975</li>						
-										<li>1976</li>						
-										<li>1977</li>						
-										<li>1978</li>						
-										<li>1979</li>						
-									</ul>
-									<ul>
-										<li>1960</li>		
-										<li>1961</li>						
-										<li>1962</li>						
-										<li>1963</li>						
-										<li>1964</li>						
-										<li>1965</li>						
-										<li>1966</li>						
-										<li>1967</li>						
-										<li>1968</li>						
-										<li>1969</li>						
-									</ul>
-									<ul>
-										<li>1950</li>	
-										<li>1951</li>						
-										<li>1952</li>						
-										<li>1953</li>						
-										<li>1954</li>						
-										<li>1955</li>						
-										<li>1956</li>						
-										<li>1957</li>						
-										<li>1958</li>						
-										<li>1959</li>						
-									</ul>
-					</div>
-					<script type="text/javascript" charset="utf-8">
-						var years = $("#menuYears ul li");
-						years.click(function(){
-							location.href = location.href.replace(/season=[0-9]{4}/,"season=" + $(this).html());							
-						});
-					</script>
+
+
 			<div id="menu">
 				<ul class="upper-menu">
-					<li><a href="#" class="menuItem year" title="Season">2009</a></li>
+					<li>
+						<a href="#" class="menuItem year" title="Season">2009</a>
+						<div id="menuYears">
+							<ul>
+								<li>2000</li>
+								<li>2001</li>	
+								<li>2002</li>	
+								<li>2003</li>	
+								<li>2004</li>	
+								<li>2005</li>	
+								<li>2006</li>	
+								<li>2007</li>	
+								<li>2008</li>	
+								<li>2009</li>
+							</ul>
+							<ul>	
+								<li>1990</li>	
+								<li>1991</li>	
+								<li>1992</li>	
+								<li>1993</li>	
+								<li>1994</li>	
+								<li>1995</li>	
+								<li>1996</li>	
+								<li>1997</li>	
+								<li>1998</li>	
+								<li>1999</li>	
+							</ul>
+							<ul>
+								<li>1980</li>			
+								<li>1981</li>						
+								<li>1982</li>						
+								<li>1983</li>						
+								<li>1984</li>						
+								<li>1985</li>						
+								<li>1986</li>						
+								<li>1987</li>						
+								<li>1988</li>						
+								<li>1989</li>						
+							</ul>
+							<ul>
+								<li>1970</li>	
+								<li>1971</li>						
+								<li>1972</li>						
+								<li>1973</li>						
+								<li>1974</li>						
+								<li>1975</li>						
+								<li>1976</li>						
+								<li>1977</li>						
+								<li>1978</li>						
+								<li>1979</li>						
+							</ul>
+							<ul>
+								<li>1960</li>		
+								<li>1961</li>						
+								<li>1962</li>						
+								<li>1963</li>						
+								<li>1964</li>						
+								<li>1965</li>						
+								<li>1966</li>						
+								<li>1967</li>						
+								<li>1968</li>						
+								<li>1969</li>						
+							</ul>
+							<ul>
+								<li>1950</li>	
+								<li>1951</li>						
+								<li>1952</li>						
+								<li>1953</li>						
+								<li>1954</li>						
+								<li>1955</li>						
+								<li>1956</li>						
+								<li>1957</li>						
+								<li>1958</li>						
+								<li>1959</li>						
+							</ul>
+							<br clear="all">
+						</div>
+					</li>
 				</ul>
+				
 			</div>
 			<div id="content">
 				<br clear="both">
@@ -131,7 +129,6 @@
 			</footer>
 		</div><!-- /wrapper -->
 
-		<script type="text/javascript" src="./static/scripts/functions.js" charset="utf-8"></script>
 		<script type="text/javascript" src="./static/scripts/round.js" charset="utf-8"></script>
 		<script type="text/javascript" src="./static/scripts/drawHtml.js" charset="utf-8"></script>
 		<script type="text/javascript">
@@ -141,6 +138,26 @@
 				var temp = function() {};
 			    window.console = {}; for (var i = 0; i < names.length; ++i) {window.console[names[i]] = temp;}
 			}})();
+			
+			
+				var years = $("#menuYears ul li");
+				var willCloseYear = false;
+				years.click(function(){
+					location.href = location.href.replace(/season=[0-9]{4}/,"season=" + $(this).html());							
+				});
+				$(".menuItem.year,#menuYears").mouseenter(function(){
+					willCloseYear = false;
+					$("#menuYears").fadeIn("fast");
+				}).mouseleave(function(){
+					willCloseYear = true;
+					setTimeout(function(){
+						if(willCloseYear) {
+							$("#menuYears").fadeOut("fast");
+						}
+					},500);
+				});
+
+			
 		</script>
 	</body>
 </html>

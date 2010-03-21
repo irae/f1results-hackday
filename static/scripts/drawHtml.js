@@ -184,7 +184,7 @@ function printDriverInfos(data) {
 			'<dl class="identity">'+
 				'<dt class="name">'+player.driver.replace(/.* /,'')+'</dt>'+
 				'<dd class="avatar character '+player.driverId+'">'+
-					'<div><img src="_base/img/character_avatars.png" alt="'+player.driver+'" /></div>'+
+					//'<div><img src="_base/img/character_avatars.png" alt="'+player.driver+'" /></div>'+
 				'</dd>'+
 			'</dl>'+
 		'</div>';
@@ -238,7 +238,7 @@ function printRaceTables(data) {
 			'<dl class="identity">' +  
 			'<dt class="name">' + races[i].results[j].driver + '</dt>' +
 			'<dd class="avatar character king_boo">' + 
-			'<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>' +
+			//'<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>' +
 			'</dd>' +
 			'<dd class="points">+' + races[i].results[j].points + '</dd>' +
 			'<dd class="score">' + driversSums[races[i].results[j].driverId] + '</dd>' + 
