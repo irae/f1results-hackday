@@ -60,8 +60,8 @@ var stageInit = function(){
 			var ctx = curvesCanvas.getContext("2d");
 			// begin canvas code
 
-            var meterH = 20;
-            var marginY = 50;
+            var meterH = playerMeterHeight;
+            var marginY = playerMargin;
             var handleY = marginY * .5;
 
             var x = [];
@@ -140,7 +140,7 @@ var stageInit = function(){
              var avatarW = $('#round_races .avatar').outerWidth();
              var marginX = $('#round_races .race').outerWidth(true) - avatarW;
              var handleX = marginX * .5;
-             var sizeY = 26;
+             var sizeY = tableLineHeigth;
 
              ctx.translate(0,-sizeY);
 
