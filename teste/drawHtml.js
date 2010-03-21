@@ -58,6 +58,7 @@ var pixelPerPoints = 4;
 
 var players = [];
 var playerCount = 0;
+var raceCount = 0;
 
 
 var playerPoints = [];
@@ -187,7 +188,9 @@ function printDriverInfos(data) {
 
 function printRaceTables(data) {
 	// console.info(data.races.length,'totalRaces');
-
+	var races = data.races;
+	var driversSums = {};
+	raceCount = races.length;
 	printDriverInfos(data);
 
 	var slider = '<div class="slider" style="width: '+(data.races.length*341+20)+'px">'+
@@ -196,8 +199,6 @@ function printRaceTables(data) {
 
 	$('#round_races').html(slider)
 
-	var races = data.races;
-	var driversSums = {};
 	for (i in races){
 		var article = document.createElement("article");
 		article.className = "race race"+i;

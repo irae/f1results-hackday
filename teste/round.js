@@ -8,8 +8,8 @@ var stageInit = function(){
 	    // window.console && console.log.call(console,arguments);
 	}
 
-    var raceCount = $('#player_1 meter.race').length;
-    var playerCount = $('#graph .player').length;
+    // var raceCount = $('#player_1 meter.race').length;
+    // var playerCount = $('#graph .player').length;
     // var roundMax = raceCount * 15;
     var pixelAdjust = 4;
     
@@ -145,7 +145,7 @@ var stageInit = function(){
              ctx.translate(0,-sizeY);
 
              /**/
- 		    for (i=1; i <= playerCount; i++) {
+ 		    for (i=1; i <= playerCount && i<11; i++) {
                  var points, hue,
                      x1, y2, x2, y2, cp2x, cp2y, 
                      x3, y3, cp3x, cp3y, x4, y4;
@@ -159,8 +159,18 @@ var stageInit = function(){
                  y1 = playerPlaces[i][1]*sizeY;
                  x2 = avatarW;
                  y2 = y1;
-
-
+				
+				// 
+				// var undefCount = 0;
+				// for (var k=1;k<raceCount;k++) {
+				// 	if(typeof playerPlaces[i][k] == 'undefined') {
+				// 		undefCount++;
+				// 	}
+				// }
+				// if(undefCount == 0) {
+				// 	continue;
+				// }
+				// 
                  ctx.beginPath();
                      ctx.moveTo(x1, y1);
                      ctx.lineTo(x2, y2);

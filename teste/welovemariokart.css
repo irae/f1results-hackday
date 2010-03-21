@@ -299,15 +299,17 @@ th {
 .avatar.character.funky_kong img { top: -225px; left: -90px; }
 .avatar.character.dry_bowser img { top: -225px; left: -135px; }
 
-#graph #player_1 progress.round { background-color: hsla(0,100%,50%,.175); }
-#graph #player_2 progress.round { background-color: hsla(110,100%,35%,.175); }
-#graph #player_3 progress.round { background-color: hsla(340,50%,50%,.175); }
-#graph #player_4 progress.round { background-color: hsla(45,75%,50%,.175); }
-#graph #player_5 progress.round { background-color: hsla(250,100%,50%,.175); }
-#graph #player_6 progress.round { background-color: hsla(330,65%,50%,.175); }
-#graph #player_7 progress.round { background-color: hsla(50,100%,50%,.175); }
-#graph #player_8 progress.round { background-color: hsla(240,5%,60%,.175); }
+#graph #player_0 progress.round { background-color: hsla(0,100%,50%,.175); }
+#graph #player_1 progress.round { background-color: hsla(110,100%,35%,.175); }
+#graph #player_2 progress.round { background-color: hsla(340,50%,50%,.175); }
+#graph #player_3 progress.round { background-color: hsla(45,75%,50%,.175); }
+#graph #player_4 progress.round { background-color: hsla(250,100%,50%,.175); }
+#graph #player_5 progress.round { background-color: hsla(330,65%,50%,.175); }
+#graph #player_6 progress.round { background-color: hsla(50,100%,50%,.175); }
+#graph #player_7 progress.round { background-color: hsla(240,5%,60%,.175); }
+#graph #player_8 progress.round { background-color: hsla(0,100%,50%,.175); }
 #graph #player_9 progress.round { background-color: hsla(0,100%,50%,.175); }
+#graph #player_10 progress.round { background-color: hsla(55,10%,45%,.175); }
 #graph #player_11 progress.round { background-color: hsla(110,90%,35%,.175); }
 #graph #player_12 progress.round { background-color: hsla(60,100%,50%,.175); }
 #graph #player_13 progress.round { background-color: hsla(45,80%,50%,.175); }
@@ -322,7 +324,6 @@ th {
 #graph #player_22 progress.round { background-color: hsla(0,0%,70%,.175); }
 #graph #player_23 progress.round { background-color: hsla(170,60%,50%,.175); }
 #graph #player_24 progress.round { background-color: hsla(30,20%,50%,.175); }
-#graph #player_25 progress.round { background-color: hsla(55,10%,45%,.175); }
 
 
 
