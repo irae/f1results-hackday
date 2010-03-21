@@ -299,30 +299,30 @@ th {
 .avatar.character.funky_kong img { top: -225px; left: -90px; }
 .avatar.character.dry_bowser img { top: -225px; left: -135px; }
 
-#graph .player.baby_mario progress.round { background-color: hsla(0,100%,50%,.175); }
-#graph .player.baby_luigi progress.round { background-color: hsla(110,100%,35%,.175); }
-#graph .player.baby_peach progress.round { background-color: hsla(340,50%,50%,.175); }
-#graph .player.baby_daisy progress.round { background-color: hsla(45,75%,50%,.175); }
-#graph .player.toad progress.round { background-color: hsla(250,100%,50%,.175); }
-#graph .player.toadette progress.round { background-color: hsla(330,65%,50%,.175); }
-#graph .player.koopa_troopa progress.round { background-color: hsla(50,100%,50%,.175); }
-#graph .player.dry_bones progress.round { background-color: hsla(240,5%,60%,.175); }
-#graph .player.mario progress.round { background-color: hsla(0,100%,50%,.175); }
-#graph .player.luigi progress.round { background-color: hsla(110,90%,35%,.175); }
-#graph .player.peach progress.round { background-color: hsla(60,100%,50%,.175); }
-#graph .player.daisy progress.round { background-color: hsla(45,80%,50%,.175); }
-#graph .player.yoshi progress.round { background-color: hsla(120,60%,50%,.175); }
-#graph .player.birdo progress.round { background-color: hsla(300,100%,50%,.175); }
-#graph .player.diddy_kong progress.round { background-color: hsla(15,100%,30%,.175); }
-#graph .player.bowser_jr progress.round { background-color: hsla(75,100%,40%,.175); }
-#graph .player.wario progress.round { background-color: hsla(60,100%,50%,.175); }
-#graph .player.waluigi progress.round { background-color: hsla(270,100%,50%,.175); }
-#graph .player.donkey_kong progress.round { background-color: hsla(15,80%,30%,.175); }
-#graph .player.bowser progress.round { background-color: hsla(15,100%,50%,.175); }
-#graph .player.king_boo progress.round { background-color: hsla(0,0%,70%,.175); }
-#graph .player.rosalina progress.round { background-color: hsla(170,60%,50%,.175); }
-#graph .player.funky_kong progress.round { background-color: hsla(30,20%,50%,.175); }
-#graph .player.dry_bowser progress.round { background-color: hsla(55,10%,45%,.175); }
+#graph #player_1 progress.round { background-color: hsla(0,100%,50%,.175); }
+#graph #player_2 progress.round { background-color: hsla(110,100%,35%,.175); }
+#graph #player_3 progress.round { background-color: hsla(340,50%,50%,.175); }
+#graph #player_4 progress.round { background-color: hsla(45,75%,50%,.175); }
+#graph #player_5 progress.round { background-color: hsla(250,100%,50%,.175); }
+#graph #player_6 progress.round { background-color: hsla(330,65%,50%,.175); }
+#graph #player_7 progress.round { background-color: hsla(50,100%,50%,.175); }
+#graph #player_8 progress.round { background-color: hsla(240,5%,60%,.175); }
+#graph #player_9 progress.round { background-color: hsla(0,100%,50%,.175); }
+#graph #player_11 progress.round { background-color: hsla(110,90%,35%,.175); }
+#graph #player_12 progress.round { background-color: hsla(60,100%,50%,.175); }
+#graph #player_13 progress.round { background-color: hsla(45,80%,50%,.175); }
+#graph #player_14 progress.round { background-color: hsla(120,60%,50%,.175); }
+#graph #player_15 progress.round { background-color: hsla(300,100%,50%,.175); }
+#graph #player_16 progress.round { background-color: hsla(15,100%,30%,.175); }
+#graph #player_17 progress.round { background-color: hsla(75,100%,40%,.175); }
+#graph #player_18 progress.round { background-color: hsla(60,100%,50%,.175); }
+#graph #player_19 progress.round { background-color: hsla(270,100%,50%,.175); }
+#graph #player_20 progress.round { background-color: hsla(15,80%,30%,.175); }
+#graph #player_21 progress.round { background-color: hsla(15,100%,50%,.175); }
+#graph #player_22 progress.round { background-color: hsla(0,0%,70%,.175); }
+#graph #player_23 progress.round { background-color: hsla(170,60%,50%,.175); }
+#graph #player_24 progress.round { background-color: hsla(30,20%,50%,.175); }
+#graph #player_25 progress.round { background-color: hsla(55,10%,45%,.175); }
 
 
 

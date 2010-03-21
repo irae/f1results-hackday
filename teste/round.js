@@ -1,6 +1,4 @@
-var placePoints = [10,8,6,5,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-
-
+// var placePoints = [10,8,6,5,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 
 var stageInit = function(){
@@ -12,8 +10,8 @@ var stageInit = function(){
 
     var raceCount = $('#player_1 meter.race').length;
     var playerCount = $('#graph .player').length;
-    var roundMax = raceCount * 8.8;
-    var pixelAdjust = 600 / roundMax;
+    // var roundMax = raceCount * 15;
+    var pixelAdjust = 4;
     
     var meterSpeed = 1500;
     var switchSpeed = 500;
@@ -29,28 +27,30 @@ var stageInit = function(){
 
 
     // get the values we need to render the canvases
-    var playerPoints = [];
-    var playerPlaces = [];
+    // var playerPoints = [];
+    // var playerPlaces = [];
 
-    for (i=1; i <= playerCount; i++) {
-        playerPoints[i] = [];
-        playerPlaces[i] = [];
-        for (j=1; j <= raceCount; j++ ) {
-            var points = $('#graph .player:eq('+(i-1)+') meter.race:eq('+(j-1)+')')
-                            .attr('value');
-            var place = $('#output tr:eq('+(i+1)+') td:eq('+(j+2)+')').text();
-            points = parseInt(points);
-            place = parseInt(place);
-			if(place.toString().toLowerCase() == 'nan') {
-				place = $('#output tr:eq('+(i+1)+') td:eq('+(j+2)+')').parents('.player').prevAll('.player').size();
-			}
-            playerPoints[i][j] = points;
-            playerPlaces[i][j] = place;
-			// debug(points);
-			console.info(i,'i',j,'j',place,'place',points,'points',typeof place,'typeof place');
-        }
-        // debug(playerPlaces[i]);
-    }
+			//     for (i=1; i <= playerCount; i++) {
+			//         playerPoints[i] = [];
+			//         playerPlaces[i] = [];
+			//         for (j=1; j <= raceCount; j++ ) {
+			//             var points = $('#graph .player:eq('+(i-1)+') meter.race:eq('+(j-1)+')')
+			//                             .attr('value');
+			//             var place = $('#output tr:eq('+(i+1)+') td:eq('+(j+2)+')').text();
+			//             points = parseInt(points,10);
+			//             place = parseInt(place,10);
+			// if(place.toString().toLowerCase() == 'nan') {
+			// 	place = $('#output tr:eq('+(i+1)+') td:eq('+(j+2)+')').parents('.player').prevAll('.player').size();
+			// }
+			//             playerPoints[i][j] = points;
+			//             playerPlaces[i][j] = place;
+			// // debug(points);
+			// if(i<5) {
+			// 	console.info('place',place,'prevAll',$('#output tr:eq('+(i+1)+') td:eq('+(j+2)+')').parent());
+			// }
+			//         }
+			//         // debug(playerPlaces[i]);
+			//     }
     
 
     // render the bezier curves
