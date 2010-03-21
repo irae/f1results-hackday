@@ -1,13 +1,25 @@
 
+function _GET(param) {
+	var re = new RegExp(param+'=([^&]+)');
+	var loc = unescape(''+document.location.href);
+	if (loc.match(re)) { return re.exec(loc)[1].replace(/</g,'&lt;').replace(/>/g,'&gt;'); } else { return false;	}
+}
+
+var season = _GET('season') || '2009';
+
 var yqlquery = 'USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.races.xml?5" AS formula1.races;\n\
 	USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.race.results.xml?5" AS formula1.race.results;\n\
 	\n\
 	select *\n\
 	from formula1.race.results\n\
-	where season="2009"\n\
+	where season="'+season+'"\n\
 	and race in (\n\
 		select round from formula1.races where season="2009" \n\
 	);';
+	
+$(function(){
+	$('#wrap h1').html('Season '+season);
+});
 
 
 function racesJsonPrettify(data) {
@@ -46,6 +58,11 @@ var pixelPerPoints = 4;
 
 var players = [];
 var playerCount = 0;
+var raceCount = 0;
+
+
+var playerPoints = [];
+var playerPlaces = [];
 
 function playerExists(searchId) {
 	var exists = false;
@@ -59,7 +76,6 @@ function playerExists(searchId) {
 
 function printDriverInfos(data) {
 	// console.debug(data.races);
-	
 	$.each(data.races,function(i,race){
 		
 		$.each(race.results,function(j,result){
@@ -81,7 +97,7 @@ function printDriverInfos(data) {
 		});
 	});
 	
-	// console.dir(players);
+	console.dir(players);
 	
 	players = players.sort(function(a,b){
 		return b.sumPoints - a.sumPoints;
@@ -104,6 +120,11 @@ function printDriverInfos(data) {
 			'<progress class="round" value="'+player.sumPoints+'" max="'+(data.races.length*10)+'" style="width: '+(pixelPerPoints*player.sumPoints+2)+'px;">';
 		
 		
+		playerPoints[i+1] = [];
+		playerPlaces[i+1] = [];
+		playerPoints[i+1].push(undefined);
+		playerPlaces[i+1].push(undefined);
+
 		$.each(data.races,function(j,race){
 			var borderShift = 2;
 			// if(j == 0) {
@@ -116,13 +137,23 @@ function printDriverInfos(data) {
 				if(result.driverId == player.driverId) {
 					hasRun = true;
 					thisRacePoints = result.points;
-					thisRacePos = result.pos;
+					thisRacePos = parseInt(result.pos,10) > 0 ?parseInt(result.pos,10):k+1;
 				}
 			});
 			if(!hasRun){
 				thisRacePos = 'X';
 			};
+
+			if(player.driverId == 'hamilton') {
+				console.info('points',parseInt(thisRacePoints,10) > 0 ?parseInt(thisRacePoints,10):0);
+				console.info('place',parseInt(thisRacePos,10) > 0 ?parseInt(thisRacePos,10):j+1);
+			}
 			
+			// graph objects
+			playerPoints[i+1].push(parseInt(thisRacePoints,10) > 0 ?parseInt(thisRacePoints,10):0);
+			playerPlaces[i+1].push(parseInt(thisRacePos,10) > 0 ?parseInt(thisRacePos,10):j+1);
+
+
 			// console.info(thisRacePos,player.driver);
 			
 			html += '\n\n<meter class="race race'+j+'" value="'+thisRacePoints+'" min="0" max="10" style="width: '+(thisRacePoints*pixelPerPoints)+'px; left: '+(pointsStack*pixelPerPoints)+'px;">'+
@@ -148,12 +179,26 @@ function printDriverInfos(data) {
 		height: (playerCount*70)+'px'
 	}).append(html);
 	
+	// console.info('playerPoints');
+	// console.dir(playerPoints);
+	// console.info('playerPlaces');
+	// console.dir(playerPlaces);
+	
 };
 
 function printRaceTables(data) {
-	printDriverInfos(data);
+	// console.info(data.races.length,'totalRaces');
 	var races = data.races;
 	var driversSums = {};
+	raceCount = races.length;
+	printDriverInfos(data);
+
+	var slider = '<div class="slider" style="width: '+(data.races.length*341+20)+'px">'+
+			'<canvas id="round_races_curves" width="'+(data.races.length*341-34)+'px" height="'+(26*players.length)+'"></canvas>'+
+		'</div>';
+
+	$('#round_races').html(slider)
+
 	for (i in races){
 		var article = document.createElement("article");
 		article.className = "race race"+i;
