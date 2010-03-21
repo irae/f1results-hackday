@@ -17,11 +17,6 @@ var yqlquery = 'USE "http://github.com/irae/yql-tables/raw/master/formula1/formu
 		select round from formula1.races where season="2009" \n\
 	);';
 	
-$(function(){
-	$('#wrap h1').html('Season '+season);
-});
-
-
 function racesJsonPrettify(data) {
 	var json = {};
 	json.races = [];
@@ -179,6 +174,10 @@ function printDriverInfos(data) {
 		height: (playerCount*70)+'px'
 	}).append(html);
 	
+	$('.graph_lines').css({
+		height: (playerCount*70)+'px'
+	});
+	
 	// console.info('playerPoints');
 	// console.dir(playerPoints);
 	// console.info('playerPlaces');
@@ -229,21 +228,23 @@ function printRaceTables(data) {
 	stageInit();
 }
 
-
-$.ajax({
-	type: 'GET',
-	dataType: 'jsonp',
-	url:'http://query.yahooapis.com/v1/public/yql',
-	data:{
-		format:'json',
-		q:yqlquery,
-		'_maxAge': 60*60
-	},
-	error: function() {
-		alert('Something wrong retrieving from YQL.')
-	},
-	success:function(data) {
-		data = racesJsonPrettify(data);
-		printRaceTables(data);
-	}
+$(function(){
+	$('#wrap h1').html('Season '+season);
+	$.ajax({
+		type: 'GET',
+		dataType: 'jsonp',
+		url:'http://query.yahooapis.com/v1/public/yql',
+		data:{
+			format:'json',
+			q:yqlquery,
+			'_maxAge': 60*60
+		},
+		error: function() {
+			alert('Something wrong retrieving from YQL.')
+		},
+		success:function(data) {
+			data = racesJsonPrettify(data);
+			printRaceTables(data);
+		}
+	});
 });
