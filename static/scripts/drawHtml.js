@@ -9,12 +9,16 @@ var raceCount = 0;
 var playerPoints = [];
 var playerPlaces = [];
 
+var tableLineHeigth = 21;
+
 // This is duplicate with the CSS. If you change here, change there too!
-var raceTableWidth = 320;
+var raceTableWidth = 250;
 var raceTableMarginLeft = 20;
 var raceTableBorderLeft = 1;
 
-var playerHeight = 70;
+var playerHeight = 45;
+var playerMargin = 30;
+var playerMeterHeight = 15;
 
 function _GET(param) {
 	var re = new RegExp(param+'=([^&]+)');
@@ -180,7 +184,7 @@ function printDriverInfos(data) {
 			'<dl class="identity">'+
 				'<dt class="name">'+player.driver.replace(/.* /,'')+'</dt>'+
 				'<dd class="avatar character '+player.driverId+'">'+
-					'<div><img src="_base/img/character_avatars.png" alt="'+player.driver+'" /></div>'+
+					//'<div><img src="_base/img/character_avatars.png" alt="'+player.driver+'" /></div>'+
 				'</dd>'+
 			'</dl>'+
 		'</div>';
@@ -234,7 +238,7 @@ function printRaceTables(data) {
 			'<dl class="identity">' +  
 			'<dt class="name">' + races[i].results[j].driver + '</dt>' +
 			'<dd class="avatar character king_boo">' + 
-			'<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>' +
+			//'<div><img src="_base/img/character_avatars.png" alt="King Boo" /></div>' +
 			'</dd>' +
 			'<dd class="points">+' + races[i].results[j].points + '</dd>' +
 			'<dd class="score">' + driversSums[races[i].results[j].driverId] + '</dd>' + 
@@ -249,7 +253,21 @@ function printRaceTables(data) {
 }
 
 $(function(){
-	$('#wrap h1').html('Season '+season);
+	$('.menuItem.year').html(season);
+	$('<div>',{
+			id:'loadingimg',
+			css:{
+				position:'absolute',
+				top:'250px',
+				left:'50%',
+				background: "url('static/images/loading.gif') no-repeat",
+				zIndex: 100,
+				width:'220px',
+				height:'30px',
+				marginLeft:'-110px'
+			}
+		})
+		.appendTo('#top')
 	$.ajax({
 		type: 'GET',
 		dataType: 'jsonp',
@@ -263,6 +281,7 @@ $(function(){
 			alert('Something wrong retrieving from YQL.')
 		},
 		success:function(data) {
+			$('#loadingimg').remove();
 			data = racesJsonPrettify(data);
 			printRaceTables(data);
 		}
