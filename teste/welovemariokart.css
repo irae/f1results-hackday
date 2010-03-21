@@ -396,7 +396,7 @@ button[disabled]:active
 }
 
 #animate_round {
-    margin-bottom: 20px;
+    margin-bottom: 20px; float:right;
 }
 
 /**************************

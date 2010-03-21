@@ -244,7 +244,7 @@ var stageInit = function(){
     // graph animation functions
 
 
-    $('#graph').after('<button id="animate_round">Animate Round</button>');
+    $('#graph').before('<button id="animate_round">Animate Season</button>');
 
     function getRank(s, currentScores) {
         var scores = [];

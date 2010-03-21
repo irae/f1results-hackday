@@ -1,0 +1,103 @@
+#wrapper{
+	position: relative;
+	margin: 20px auto;
+	width: 900px;
+	padding: 20px;
+	background: #CCCCCC;
+	overflow: hidden;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+#top, #down{
+	clear: both;
+	display: block;
+	margin: 10px 0;
+}
+#top h1.f1-stats-logo a{
+	display:block ;
+	float: left;
+	width: 345px;
+	height: 69px;
+	text-indent: -9999px;
+	background: transparent url('../images/f1-stats.png') no-repeat;
+}
+
+#top h2.socialminds a{
+	display: block;
+	float: right;
+	width: 113px;
+	height: 70px;
+	text-indent: -9999px;
+	background: transparent url('../images/social-minds.png') no-repeat;
+}
+#down{
+	padding: 10px 0;
+	border-top: 1px solid #999;
+}
+
+
+/* Menu buttons */
+#menu{
+	position: absolute;
+	margin-left: -110px;
+	left: 50%;
+	top: 110px;
+	width: 230px;
+	height: 25px;
+}
+#menu ul,
+#menu li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#menu li{
+	float: left;
+}
+#menu li a { 
+	background-image: url('../images/bg-btn.png');
+	padding: 6px 14px 6px;
+	font-family: 'ITCOfficinaSerifStdBook';
+	border: 1px solid rgba(0,0,0,.25);
+	border-bottom-color: rgba(0,0,0,.35);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	color: #666;
+	text-decoration: none;
+	font-weight: bold;
+}
+#menu li a.driver{
+	
+}
+#menu li a.item3{
+	border-left: none;
+	padding-left: 25px;
+	margin-left: -20px;
+	-webkit-border-top-right-radius: 15px;
+	-webkit-border-bottom-right-radius: 15px;
+	-moz-border-radius-topright: 15px;
+	-moz-border-radius-bottomright: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;	}
+
+#content{
+	clear: both;
+	height: 200px;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: inset 0px 5px 10px #666; /* FF3.5+ */
+	-webkit-box-shadow: inset 0px 5px 10px #666; /* Saf3.0+, Chrome */
+	box-shadow: inset 0px 5px 10px #666; /* Opera 10.5, IE 9.0 */
+	filter:  progid:DXImageTransform.Microsoft.dropshadow(OffX=inset 0px, OffY=5px, Color='#666666'); /* IE6,IE7 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=inset 0px, OffY=5px, Color='#666666')"; /* IE8 */
+}
+
+@font-face {
+	font-family: 'ITCOfficinaSerifStdBook';
+	src: url('OfficinaSerifStd-Book.eot');
+	src: local('ITC Officina Serif Std'), local('OfficinaSerifStd-Book'), url('OfficinaSerifStd-Book.woff') format('woff'), url('OfficinaSerifStd-Book.ttf') format('truetype');
+}
