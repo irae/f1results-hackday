@@ -1,11 +1,27 @@
 
+// Globals
+
+var season = _GET('season') || '2009';
+var pixelPerPoints = 4;
+var players = [];
+var playerCount = 0;
+var absoluteTotalPlayers = 0;
+var raceCount = 0;
+var playerPoints = [];
+var playerPlaces = [];
+
+// This is duplicate with the CSS. If you change here, change there too!
+var raceTableWidth = 320;
+var raceTableMarginLeft = 20;
+var raceTableBorderLeft = 1;
+
+var playerHeight = 70;
+
 function _GET(param) {
 	var re = new RegExp(param+'=([^&]+)');
 	var loc = unescape(''+document.location.href);
 	if (loc.match(re)) { return re.exec(loc)[1].replace(/</g,'&lt;').replace(/>/g,'&gt;'); } else { return false;	}
-}
-
-var season = _GET('season') || '2009';
+};
 
 var yqlquery = 'USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.races.xml?5" AS formula1.races;\n\
 	USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.race.results.xml?5" AS formula1.race.results;\n\
@@ -51,17 +67,6 @@ function racesJsonPrettify(data) {
 	return json;
 };
 
-
-var pixelPerPoints = 4;
-
-var players = [];
-var playerCount = 0;
-var raceCount = 0;
-
-
-var playerPoints = [];
-var playerPlaces = [];
-
 function playerExists(searchId) {
 	var exists = false;
 	$.each(players, function(i,player){
@@ -95,7 +100,9 @@ function printDriverInfos(data) {
 		});
 	});
 	
-	console.dir(players);
+	absoluteTotalPlayers = players.length;
+	
+	// console.dir(players);
 	
 	// sort players
 	players = players.sort(function(a,b){
@@ -113,7 +120,7 @@ function printDriverInfos(data) {
 		playerCount = limit;
 	}
 	
-	var html = '<canvas id="curves" width="600" height="'+(playerCount*70)+'"></canvas>';
+	var html = '<canvas id="curves" width="600" height="'+(playerCount*playerHeight)+'"></canvas>';
 	
 	var posSufixes = ['st','nd','rd','th','th','th','th','th','th','th'];
 	
@@ -121,7 +128,7 @@ function printDriverInfos(data) {
 		
 		var pointsStack = 0;
 		
-		html += '<div id="player_'+player.playerCount+'" class="player '+player.driverId+'" style="top:'+((player.playerCount-1)*70)+'px">'+
+		html += '<div id="player_'+player.playerCount+'" class="player '+player.driverId+'" style="top:'+((player.playerCount-1)*playerHeight)+'px">'+
 			'<p class="total">'+player.sumPoints+'</p>'+
 			'<progress class="round" value="'+player.sumPoints+'" max="'+(data.races.length*10)+'" style="width: '+(pixelPerPoints*player.sumPoints+2)+'px;">';
 		
@@ -150,11 +157,11 @@ function printDriverInfos(data) {
 				thisRacePos = 'X';
 			};
 
-			if(player.driverId == 'hamilton') {
-				console.info('points',parseInt(thisRacePoints,10) > 0 ?parseInt(thisRacePoints,10):0);
-				console.info('place',parseInt(thisRacePos,10) > 0 ?parseInt(thisRacePos,10):j+1);
-			}
-			
+			// if(player.driverId == 'hamilton') {
+			// 	console.info('points',parseInt(thisRacePoints,10) > 0 ?parseInt(thisRacePoints,10):0);
+			// 	console.info('place',parseInt(thisRacePos,10) > 0 ?parseInt(thisRacePos,10):j+1);
+			// }
+			// 
 			// graph objects
 			playerPoints[i+1].push(parseInt(thisRacePoints,10) > 0 ?parseInt(thisRacePoints,10):0);
 			playerPlaces[i+1].push(parseInt(thisRacePos,10) > 0 ?parseInt(thisRacePos,10):j+1);
@@ -182,11 +189,11 @@ function printDriverInfos(data) {
 	});
 	
 	$('#graph').css({
-		height: (playerCount*70)+'px'
+		height: (playerCount*playerHeight)+'px'
 	}).append(html);
 	
 	$('.graph_lines').css({
-		height: (playerCount*70)+'px'
+		height: (playerCount*playerHeight)+'px'
 	});
 	
 	// console.info('playerPoints');
@@ -202,9 +209,12 @@ function printRaceTables(data) {
 	var driversSums = {};
 	raceCount = races.length;
 	printDriverInfos(data);
+	
+	var totalWidth = raceTableWidth + raceTableMarginLeft + raceTableBorderLeft;
+	
 
-	var slider = '<div class="slider" style="width: '+(data.races.length*341+20)+'px">'+
-			'<canvas id="round_races_curves" width="'+(data.races.length*341-34)+'px" height="'+(26*players.length)+'"></canvas>'+
+	var slider = '<div class="slider" style="width: '+(data.races.length*totalWidth+raceTableMarginLeft)+'px">'+
+			'<canvas id="round_races_curves" width="'+(data.races.length*totalWidth-34)+'px" height="'+(26*absoluteTotalPlayers)+'"></canvas>'+
 		'</div>';
 
 	$('#round_races').html(slider)

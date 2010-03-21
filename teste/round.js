@@ -15,7 +15,7 @@ var stageInit = function(){
     
     var meterSpeed = 1500;
     var switchSpeed = 500;
-    var playerY = 70;
+    var playerY = playerHeight;
 
     var roundRacesW = $('#round_races').width();
     var sliderW = $('#round_races .slider').width();
