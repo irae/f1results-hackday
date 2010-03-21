@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>f1Stats getData example</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			var yqlquery = 'USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.races.xml?5" AS formula1.races;\n\
+			USE "http://github.com/irae/yql-tables/raw/master/formula1/formula1.race.results.xml?5" AS formula1.race.results;\n\
+			\n\
+			select *\n\
+				from formula1.race.results\n\
+					where season="2009"\n\
+					and race in (\n\
+						select round from formula1.races where season="2009" \n\
+					);';
+			function racesJsonPrettify(data) {
+				var json = {};
+				json.races = [];
+				$.each(data.query.results.Races,function(i,oRace){
+					var nRace = {
+						name: oRace.raceName,
+						results: []
+					};
+					for(var j=0;j<oRace.Results.length;j++) {
+						var res = oRace.Results[j];
+						var resOut = {
+							pos:parseInt(res.position,10),
+							driver: res.Driver.givenName + ' ' + res.Driver.familyName,
+							team: res.Constructor.name,
+							laps: parseInt(res.laps,10),
+							points: parseInt(res.points,10),
+							status: res.status,
+							grid: parseInt(res.grid,10),
+							num: parseInt(res.number,10)
+						};
+						if(res.Time) {
+							resOut.time = res.Time.time;
+						}
+						nRace.results.push(resOut);
+					}
+					json.races.push(nRace);
+				});
+				return json;
+			};
+			$.ajax({
+				type: 'GET',
+				dataType: 'jsonp',
+				url:'http://query.yahooapis.com/v1/public/yql',
+				data:{
+					format:'json',
+					q:yqlquery
+				},
+				error: function() {
+					alert('Something wrong retrieving from YQL.')
+				},
+				success:function(data) {
+					data = racesJsonPrettify(data);
+					console.dir(data.races);
+				}
+			});
+		</script>
+	</head>
+</html>
