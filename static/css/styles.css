@@ -40,10 +40,10 @@
 /* Menu buttons */
 #menu{
 	position: absolute;
-	margin-left: -110px;
+	margin-left: -35px;
 	left: 50%;
 	top: 110px;
-	width: 230px;
+	width: 70px;
 	height: 25px;
 }
 #menu ul,
@@ -170,6 +170,7 @@ th {
 **************************/
 
 #graph {
+	width: 800px;
     margin: 40px 0 10px 80px;
     background: #FFF;
     position: relative;
@@ -482,7 +483,8 @@ button[disabled]:active
 }
 
 #animate_round {
-    margin-bottom: 20px; float:right;
+	float: right;
+    margin: 0 20px 20px 0;
 }
 
 /**************************
@@ -490,7 +492,6 @@ button[disabled]:active
 **************************/
 
 #round_races {
-    border: 1px solid #CCC;
     overflow-y: hidden;
     overflow-x: scroll;
     margin-bottom: 20px;
