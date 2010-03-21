@@ -174,7 +174,7 @@ th {
     margin: 40px 0 10px 80px;
     background: #FFF;
     position: relative;
-    min-height: 280px;
+    min-height: 180px;
 }
 
 
@@ -183,7 +183,7 @@ th {
 #graph .graph_lines {
     border-left: 1px solid #DDD;
     position: absolute;
-    height: 280px;
+    height: 200px;
     top: -20px;
     left: 0;
 }
@@ -508,7 +508,7 @@ button[disabled]:active
 }
 
 #round_races .race {
-    width: 320px;
+    width: 250px;
     float: left;
     border: 1px solid #CCC;
     margin: 20px 0 20px 20px;
@@ -522,9 +522,9 @@ button[disabled]:active
 }
 
 #round_races li {
-    height: 25px;
+    height: 20px;
     border-top: 1px solid #CCC;
-    line-height: 25px;
+    line-height: 20px;
     font-weight: 200;
 }
 
@@ -534,9 +534,9 @@ button[disabled]:active
     text-align: right;
     line-height: 20px;
     letter-spacing: -0.1em;
-    font-size: 17px;
+    font-size: 15px;
     color: #AAA;
-    line-height: 25px;
+    line-height: 20px;
 }
 
 #round_races .player {
@@ -570,7 +570,7 @@ button[disabled]:active
     position: absolute;
     top: 0px;
     left: 32px;
-    font-size: 19px;
+    font-size: 15px;
     letter-spacing: -0.03em;
     font-weight: bold;
 }

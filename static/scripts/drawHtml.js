@@ -9,12 +9,16 @@ var raceCount = 0;
 var playerPoints = [];
 var playerPlaces = [];
 
+var tableLineHeigth = 21;
+
 // This is duplicate with the CSS. If you change here, change there too!
-var raceTableWidth = 320;
+var raceTableWidth = 250;
 var raceTableMarginLeft = 20;
 var raceTableBorderLeft = 1;
 
-var playerHeight = 70;
+var playerHeight = 45;
+var playerMargin = 30;
+var playerMeterHeight = 15;
 
 function _GET(param) {
 	var re = new RegExp(param+'=([^&]+)');
@@ -250,6 +254,20 @@ function printRaceTables(data) {
 
 $(function(){
 	$('#wrap h1').html('Season '+season);
+	$('<div>',{
+			id:'loadingimg',
+			css:{
+				position:'absolute',
+				top:'250px',
+				left:'50%',
+				background: "url('static/images/loading.gif') no-repeat",
+				zIndex: 100,
+				width:'220px',
+				height:'30px',
+				marginLeft:'-110px'
+			}
+		})
+		.appendTo('#top')
 	$.ajax({
 		type: 'GET',
 		dataType: 'jsonp',
@@ -263,6 +281,7 @@ $(function(){
 			alert('Something wrong retrieving from YQL.')
 		},
 		success:function(data) {
+			$('#loadingimg').remove();
 			data = racesJsonPrettify(data);
 			printRaceTables(data);
 		}
