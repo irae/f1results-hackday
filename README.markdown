@@ -1,8 +1,15 @@
-f1Stats
+F1-Stats
 ======
-Visualização em <canvas> de temporadas de Fórmula 1 usando informações do [Formula 1™ - The Official F1™ Website](http://f1.com/)
+A <canvas> visualization of F1 seasons using information from Ergast Developer [http://ergast.com/mrd/]
 
-Tecnologias usadas
+Used technologies
 --------
 
 1. HTML5 <canvas> - [http://dev.w3.org/html5/spec/the-canvas-element.html]
+2. CSS3
+3. jQuery
+4. YUI
+
+Inspiration
+--------
+Totally inspired on the amazing website [http://wiilovemariokart.com/], by David Desandro [http://desandro.com/]
