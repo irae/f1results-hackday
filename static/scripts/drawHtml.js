@@ -253,7 +253,7 @@ function printRaceTables(data) {
 }
 
 $(function(){
-	$('#wrap h1').html('Season '+season);
+	$('.menuItem.year').html(season);
 	$('<div>',{
 			id:'loadingimg',
 			css:{
