@@ -150,17 +150,22 @@
 						location.href =  loc + (location.search?'&':'?') + "season=" + $(this).html();
 					}
 				});
-				$(".menuItem.year,#menuYears").mouseenter(function(){
-					willCloseYear = false;
-					$("#menuYears").fadeIn("fast");
-				}).mouseleave(function(){
-					willCloseYear = true;
-					setTimeout(function(){
-						if(willCloseYear) {
-							$("#menuYears").fadeOut("fast");
-						}
-					},500);
-				});
+				$(".menuItem.year,#menuYears")
+					.mouseenter(function(){
+						willCloseYear = false;
+						$("#menuYears").fadeIn("fast");
+					})
+					.mouseleave(function(){
+						willCloseYear = true;
+						setTimeout(function(){
+							if(willCloseYear) {
+								$("#menuYears").fadeOut("fast");
+							}
+						},500);
+					})
+					.click(function(){
+						return false;
+					});
 
 			
 		</script>
