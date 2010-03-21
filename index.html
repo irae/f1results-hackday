@@ -19,19 +19,41 @@
 			</header>
 			<div id="menu">
 				<ul class="upper-menu">
-					<li><a href="#" class="menuItem drivers">Drivers</a></li>
-					<li><a href="#" class="menuItem teams">Teams</a></li>
-					<li><a href="#" class="menuItem year">2009</a></li>
+					<li><a href="#" class="menuItem action" title="Animate. Ready, set, GO!">Action!</a></li>
+					<li><a href="#" class="menuItem year" title="Season">2009</a></li>
 				</ul>
 			</div>
 			<div id="content">
-				
+				<section id="graph">
+					<div class="graph_lines">
+						<label class="zero">0</label>
+						<div><label>25</label></div>
+						<div><label>50</label></div>
+						<div><label>75</label></div>
+						<div><label>100</label></div>
+						<div><label>125</label></div>
+						<div><label>150</label></div>
+					</div>
+				</section>
+				<br clear="all" />
+
+				<section id="round_races"></section>
 			</div>
 			<footer id="down">
 				footer info goes here ;)
 			</footer>
 		</div><!-- /wrapper -->
 
-		<script type="text/javascript" src="./static/scripts/functions.js"></script>
+		<script type="text/javascript" src="./static/scripts/functions.js" charset="utf-8"></script>
+		<script type="text/javascript" src="./static/scripts/round.js" charset="utf-8"></script>
+		<script type="text/javascript" src="./static/scripts/drawHtml.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			// Firebugx
+			(function(){if (!("console" in window) || !("firebug" in console)){
+			    var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
+				var temp = function() {};
+			    window.console = {}; for (var i = 0; i < names.length; ++i) {window.console[names[i]] = temp;}
+			}})();
+		</script>
 	</body>
 </html>
