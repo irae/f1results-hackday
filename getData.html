@@ -26,8 +26,9 @@
 					for(var j=0;j<oRace.Results.length;j++) {
 						var res = oRace.Results[j];
 						var resOut = {
-							pos:parseInt(res.position,10),
+							pos: res.position,10,
 							driver: res.Driver.givenName + ' ' + res.Driver.familyName,
+							driverId: res.Driver.driverId,
 							team: res.Constructor.name,
 							laps: parseInt(res.laps,10),
 							points: parseInt(res.points,10),
@@ -56,6 +57,7 @@
 					alert('Something wrong retrieving from YQL.')
 				},
 				success:function(data) {
+					console.dir(data);
 					data = racesJsonPrettify(data);
 					console.dir(data.races);
 				}
