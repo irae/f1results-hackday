@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script-->
 	<title>F1 Data</title>
 	
 </head>
@@ -15,7 +15,13 @@
 
 
 var cbfunc = function(data){
-    alert(data.toSource());
+	var results = data.query.results;
+	var html = "<ul>";
+	for (i in results){
+		html += "<li>" + results[i].pos + " - " + results[i].num + " - " + results[i].driver + " - " + results[i].constructor + " - " + results[i].points + "</li>";
+	}
+	html += "</ul>";
+	document.body.innerHTML = html;
 };
 
 var getScript = function(url){
