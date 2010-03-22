@@ -34,8 +34,12 @@
 #down{
 	padding: 10px 0;
 	border-top: 1px solid #999;
+	text-align:center;
+	color:#888;
 }
-
+#down a {
+	color:#888;
+}
 
 /* Menu buttons */
 #menu{
