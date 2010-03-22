@@ -8,7 +8,7 @@ Used technologies
 1. HTML5 <canvas> - [http://dev.w3.org/html5/spec/the-canvas-element.html]
 2. CSS3
 3. jQuery
-4. YUI
+4. YQL (Using Custom Open Tables)[http://github.com/irae/yql-tables/tree/master/formula1/]
 
 Inspiration
 --------
