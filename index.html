@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="./static/css/styles.css" media="screen" />
 
 		<script type="text/javascript" src="./static/scripts/jquery.min.js"></script>
+
 	</head>
 	<body>
 
@@ -18,6 +19,7 @@
 				<h1 class="f1-stats-logo"><a href="/">F1 Stats</a></h1>
 				<h2 class="socialminds"><a href="http://socialminds.com.br/" target="_blank">Social Minds</a></h2>
 				<br clear="all" />
+
 			</header>
 
 			<style type="text/css" media="screen">
@@ -29,6 +31,7 @@
 				<ul class="upper-menu">
 					<li>
 						<a href="#" class="menuItem year" title="Season">2009</a>
+
 						<div id="menuYears">
 							<ul>
 								<li>2000</li>
@@ -41,6 +44,7 @@
 								<li>2007</li>	
 								<li>2008</li>	
 								<li>2009</li>
+
 							</ul>
 							<ul>	
 								<li>1990</li>	
@@ -54,6 +58,7 @@
 								<li>1998</li>	
 								<li>1999</li>	
 							</ul>
+
 							<ul>
 								<li>1980</li>			
 								<li>1981</li>						
@@ -66,6 +71,7 @@
 								<li>1988</li>						
 								<li>1989</li>						
 							</ul>
+
 							<ul>
 								<li>1970</li>	
 								<li>1971</li>						
@@ -78,6 +84,7 @@
 								<li>1978</li>						
 								<li>1979</li>						
 							</ul>
+
 							<ul>
 								<li>1960</li>		
 								<li>1961</li>						
@@ -90,6 +97,7 @@
 								<li>1968</li>						
 								<li>1969</li>						
 							</ul>
+
 							<ul>
 								<li>1950</li>	
 								<li>1951</li>						
@@ -102,6 +110,7 @@
 								<li>1958</li>						
 								<li>1959</li>						
 							</ul>
+
 							<br clear="all">
 						</div>
 					</li>
@@ -112,12 +121,14 @@
 				<br clear="both">
 				<section id="graph">
 					<div class="graph_lines">
+
 						<label class="zero">0</label>
 						<div><label>25</label></div>
 						<div><label>50</label></div>
 						<div><label>75</label></div>
 						<div><label>100</label></div>
 						<div><label>125</label></div>
+
 						<div><label>150</label></div>
 					</div>
 				</section>
@@ -125,7 +136,12 @@
 				<section id="round_races"></section>
 			</div>
 			<footer id="down">
-				Desenvolvido no <a href="http://openhackbrazil2010.eventwax.com/open-hack-2010-brazil" title="Yahoo! Open Hack Day">Yahoo! Open Hack Day</a> - <a href="http://github.com/danielfilho/Social-Minds-Hack-Day-2010" title="Social-Minds-Hack-Day-2010 at GitHub">Github Project</a> - Inspiration: <a href="http://wiilovemariokart.com/" title="Wii Love Mario Kart">Wii Love Mario Kart</a>
+				Made at <a href="http://openhackbrazil2010.eventwax.com/open-hack-2010-brazil" title="Yahoo! Open Hack Day">Yahoo! Open Hack Day</a><br />
+
+				<a href="http://github.com/danielfilho/Social-Minds-Hack-Day-2010" title="Social-Minds-Hack-Day-2010 at GitHub">Github Project</a><br />
+				Hacked from: <a href="http://wiilovemariokart.com/" title="Wii Love Mario Kart">Wii Love Mario Kart</a> by <a href="http://desandro.com/" title="David Desandro">David Desandro</a><br />
+				By <a href="http://socialminds.com.br" title="Social Minds">Social Minds</a> (<a href="http://twitter.com/danielfilho" title="Daniel Filho's twitter">Daniel</a> and <a href="http://twitter.com/fabiodan" title="Fabio Dan's twitter">Fabio Dan</a>) and <a href="http://twitter.com/irae" title="Irae's twitter">Irae</a>
+
 			</footer>
 		</div><!-- /wrapper -->
 
@@ -164,11 +180,19 @@
 						},500);
 					})
 					.click(function(){
-						$(this).css({opacity:1});
 						return false;
 					});
+		</script>
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 
-			
+		<script type="text/javascript">
+			try {
+				var pageTracker = _gat._getTracker("UA-66092-16");
+				pageTracker._trackPageview();
+			} catch(err) {}
 		</script>
 	</body>
 </html>

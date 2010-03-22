@@ -118,6 +118,9 @@ function printDriverInfos(data) {
 	});
 	
 	var limit = parseInt(_GET('limit'),10);
+	if(!limit) {
+		limit = 5;
+	}
 	if( limit > 2) {
 		players = players.slice(0,limit);
 		playerCount = limit;
