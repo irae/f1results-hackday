@@ -1,6 +1,6 @@
 F1-Stats
 ======
-A <canvas> visualization of F1 seasons using information from Ergast Developer [http://ergast.com/mrd/]
+A <canvas> visualization of F1 seasons using information from [Ergast Developer API](http://ergast.com/mrd/).
 
 Used technologies
 --------
@@ -12,4 +12,4 @@ Used technologies
 
 Inspiration
 --------
-Totally inspired on the amazing website [http://wiilovemariokart.com/], by David Desandro [http://desandro.com/]
+Totally inspired on the amazing website [WiiloveMariokart](http://wiilovemariokart.com/), by [David Desandro](http://desandro.com/)
