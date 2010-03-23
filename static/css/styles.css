@@ -23,6 +23,15 @@
 	background: transparent url('../images/f1-stats.png') no-repeat;
 }
 
+#top h2.works-with{
+	float: left;
+	margin: 0 0 0 60px;
+	width: 321px;
+	height: 54px;
+	text-indent: -9999px;
+	background: transparent url('../images/works-with.png') no-repeat;
+}
+
 #top h2.socialminds a{
 	display: block;
 	float: right;
