@@ -1,6 +1,6 @@
 F1-Stats
 ======
-A <canvas> visualization of F1 seasons using information from [Ergast Developer API](http://ergast.com/mrd/).
+Project made for Brazil Open Hack Day 2010 using canvas visualization of F1 seasons using information from [Ergast Developer API](http://ergast.com/mrd/).
 
 Used technologies
 --------
@@ -13,3 +13,10 @@ Used technologies
 Inspiration
 --------
 Totally inspired on the amazing website [WiiloveMariokart](http://wiilovemariokart.com/), by [David Desandro](http://desandro.com/)
+
+Awards
+--------
+
+Best in-show hack
+Best hacker's choice
+Best interface
