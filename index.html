@@ -9,6 +9,19 @@
 		<link rel="stylesheet" type="text/css" href="./static/css/styles.css" media="screen" />
 
 		<script type="text/javascript" src="./static/scripts/jquery.min.js"></script>
+		<!--[if lte IE 8]>
+		<script type="text/javascript" charset="utf-8">
+		var IE6UPDATE_OPTIONS = {
+			icons_path: "static/images/ie6update/",
+			url: "http://www.getfirefox.com/",
+			message: "This version of Internet Explorer is unable to render this website. Click here to download Firefox... "
+		}
+		</script>
+		<script src="static/scripts/ie6update.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css" media="screen">
+			#content, #menu {display:none !important;}
+		</style>
+		<![endif]-->
 
 	</head>
 	<body>
@@ -144,45 +157,45 @@
 
 			</footer>
 		</div><!-- /wrapper -->
-
-		<script type="text/javascript" src="./static/scripts/round.js" charset="utf-8"></script>
-		<script type="text/javascript" src="./static/scripts/drawHtml.js" charset="utf-8"></script>
-		<script type="text/javascript">
+		<!--[if !lte IE 8]><!-->
+			<script type="text/javascript" src="./static/scripts/round.js" charset="utf-8"></script>
+			<script type="text/javascript" src="./static/scripts/drawHtml.js" charset="utf-8"></script>
+			<script type="text/javascript">
 			// Firebugx
 			(function(){if (!("console" in window) || !("firebug" in console)){
 			    var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
 				var temp = function() {};
 			    window.console = {}; for (var i = 0; i < names.length; ++i) {window.console[names[i]] = temp;}
 			}})();
-			
-			
-				var years = $("#menuYears ul li");
-				var willCloseYear = false;
-				years.click(function(){
-					var loc = document.location.href;
-					if (1+document.location.href.indexOf("season")){
-						location.href = loc.replace(/season=[0-9]{4}/,"season=" + $(this).html());													
-					} else {
-						location.href =  loc + (location.search?'&':'?') + "season=" + $(this).html();
-					}
+
+			var years = $("#menuYears ul li");
+			var willCloseYear = false;
+			years.click(function(){
+				var loc = document.location.href;
+				if (1+document.location.href.indexOf("season")){
+					location.href = loc.replace(/season=[0-9]{4}/,"season=" + $(this).html());													
+				} else {
+					location.href =  loc + (location.search?'&':'?') + "season=" + $(this).html();
+				}
+			});
+			$(".menuItem.year,#menuYears")
+				.mouseenter(function(){
+					willCloseYear = false;
+					$("#menuYears").fadeIn("fast");
+				})
+				.mouseleave(function(){
+					willCloseYear = true;
+					setTimeout(function(){
+						if(willCloseYear) {
+							$("#menuYears").fadeOut("fast");
+						}
+					},500);
+				})
+				.click(function(){
+					return false;
 				});
-				$(".menuItem.year,#menuYears")
-					.mouseenter(function(){
-						willCloseYear = false;
-						$("#menuYears").fadeIn("fast");
-					})
-					.mouseleave(function(){
-						willCloseYear = true;
-						setTimeout(function(){
-							if(willCloseYear) {
-								$("#menuYears").fadeOut("fast");
-							}
-						},500);
-					})
-					.click(function(){
-						return false;
-					});
-		</script>
+			</script>
+		<!-- <![endif]-->
 		<script type="text/javascript">
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
