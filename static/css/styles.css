@@ -123,8 +123,8 @@
 
 @font-face {
 	font-family: 'ITCOfficinaSerifStdBook';
-	src: url('../static/font/OfficinaSerifStd-Book.eot');
-	src: local('ITC Officina Serif Std'), local('OfficinaSerifStd-Book'), url('../static/font/OfficinaSerifStd-Book.woff') format('woff'), url('../static/font/OfficinaSerifStd-Book.ttf') format('truetype');
+	src: url('http://f1results.socialminds.com.br/static/font/OfficinaSerifStd-Book.eot');
+	src: local('ITC Officina Serif Std'), local('OfficinaSerifStd-Book'), url('http://f1results.socialminds.com.br/static/font/OfficinaSerifStd-Book.woff') format('woff'), url('http://f1results.socialminds.com.br/static/font/OfficinaSerifStd-Book.ttf') format('truetype');
 }
 
 /* HTML5 styles */
